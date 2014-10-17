@@ -19,7 +19,7 @@ body {
     line-height: $base-line-height;
     font-weight: 300;
     color: $text-color;
-    background-color: $background-color;
+    background-color: $grey-color-light;
     -webkit-text-size-adjust: 100%;
 }
 
@@ -35,7 +35,9 @@ ul, ol, dl, figure,
     margin-bottom: $spacing-unit / 2;
 }
 
-
+p {
+    padding: 0 5px;
+}
 
 /**
  * Images
@@ -149,7 +151,6 @@ pre {
 }
 
 
-
 /**
  * Wrapper
  */
@@ -160,6 +161,7 @@ pre {
     margin-left: auto;
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
+    min-width: 86px;
     @extend %clearfix;
 
     @include media-query($on-laptop) {
@@ -169,7 +171,6 @@ pre {
         padding-left: $spacing-unit / 2;
     }
 }
-
 
 
 /**
@@ -202,3 +203,17 @@ pre {
         }
     }
 }
+
+.circular {
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin: 0px 20px;
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    background: url(http://www.gravatar.com/avatar/461057a50ef7860763e4e05f06115433.jpg) no-repeat;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    }

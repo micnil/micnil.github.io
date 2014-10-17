@@ -6,7 +6,7 @@
 
 
 // Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-family: latoregular, Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
@@ -47,3 +47,37 @@ $on-laptop:        800px;
         "layout",
         "syntax-highlighting"
 ;
+
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Lato Regular"), local("Lato-Regular"), url("//themes.googleusercontent.com/static/fonts/lato/v7/9k-RPmcnxYEPm8CNFsH2gg.woff") format("woff");
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('../fonts/OpenSans/Regular/opensans-regular-webfont.eot');
+    src: url('../fonts/OpenSans/Regular/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OpenSans/Regular/opensans-regular-webfont.woff2') format('woff2'),
+         url('../fonts/OpenSans/Regular/opensans-regular-webfont.woff') format('woff'),
+         url('../fonts/OpenSans/Regular/opensans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/OpenSans/Regular/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'latoregular';
+    src: url('../fonts/lato/regular/lato-regular-webfont.eot');
+    src: url('../fonts/lato/regular/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato/regular/lato-regular-webfont.woff2') format('woff2'),
+         url('../fonts/lato/regular/lato-regular-webfont.woff') format('woff'),
+         url('../fonts/lato/regular/lato-regular-webfont.ttf') format('truetype'),
+         url('../fonts/lato/regular/lato-regular-webfont.svg#latoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

@@ -24,6 +24,7 @@
     bottom: 0px;
     @include media-query($on-palm) {
         line-height: 35px;
+        font-size: 30px;
     }
     &,
     &:visited {
@@ -220,13 +221,13 @@
 }
 
 .post-title {
-    font-size: 30px;
+    font-size: 26px;
     letter-spacing: -1px;
     line-height: 1;
 
-    @include media-query($on-laptop) {
-        font-size: 36px;
-    }
+  //  @include media-query($on-laptop) {
+  //      font-size: 36px;
+  //  }
 }
 
 .post-content {

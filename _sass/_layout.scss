@@ -8,6 +8,9 @@
     background-color: $grey-color-dark;
     // Positioning context for the mobile navigation icon
     position: relative;
+    @include media-query($on-palm) {
+        min-height: $spacing-unit * 2;
+    }
 }
 
 .site-title {
@@ -19,6 +22,9 @@
     color: $grey-color-light;
     position:absolute;
     bottom: 0px;
+    @include media-query($on-palm) {
+        line-height: 35px;
+    }
     &,
     &:visited {
         color: $grey-color-light;
@@ -45,6 +51,7 @@
 
     @include media-query($on-palm) {
         position: absolute;
+        margin-top: 0px;
         top: 9px;
         right: 30px;
         background-color: $background-color;

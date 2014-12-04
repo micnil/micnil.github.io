@@ -7,27 +7,29 @@ If Spotify has found its way here, i need to excuse for my incomplete web page. 
 Below i link to some of the projects i have worked on!
 
 First of all, here is where my heart is:
-http://michaelnilsson.me/spotify_heartbeat/
 
-Freakolution
-------------
+[My heart](/spotify_heartbeat/)
+
+ Freakolution
+============
 The most recent project, me and 3 team members created a game in Unity3D game engine. The game one first prize in a MAGIC Game Challenge (http://magic.ntu.edu.sg/).
 
-https://www.youtube.com/watch?v=HZn-pMRpLiU
+[Freakolution](https://www.youtube.com/watch?v=HZn-pMRpLiU)
 
-BSpline Curve Editor
---------------------
-For a course in 3D Modelling and Reconstruction at Nanyang Technological University. 
-http://michaelnilsson.me/B-spline_plotter/
+ BSpline Curve Editor
+============
+For a course in 3D Modelling and Reconstruction at Nanyang Technological University.
 
-Space Curling
--------------------------
+[BSpline Curve Editor](/B-spline_plotter/)
+
+ Space Curling
+============
 A curling game/visualizer made in WebGL for the course Modelling and Simulation at Linköping University
 
-http://michaelnilsson.me/MoS_Projekt/
+[Space Curling](/MoS_Projekt/)
 
-Simple Particle System
------------------------
+ Simple Particle System
+============
 A small hack i did this summer after work, just for fun. Javascript.
 
-http://michaelnilsson.me/JS-Particle-System/
+[Particle System](/JS-Particle-System/)

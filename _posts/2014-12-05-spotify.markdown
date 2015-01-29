@@ -1,18 +1,13 @@
 ---
 layout: post
-title:  "Hi Spotify!"
+title:  "Recent projects"
 date:   2014-12-4 17:01:52
 ---
-If Spotify has found its way here, i need to excuse for my incomplete web page. There is not much to see except this post.
-Below i link to some of the projects i have worked on!
-
-First of all, here is where my heart is:
-
-[My heart](/spotify_heartbeat/)
+These are some of the most recent projects i have worked on. There is unfortunately not much else to see on this site.
 
  Freakolution
 ============
-The most recent project, me and 3 team members created a game in Unity3D game engine. The game one first prize in a MAGIC Game Challenge (http://magic.ntu.edu.sg/).
+The most recent project, me and 3 team members created a game in Unity3D game engine. The game won first prize in a MAGIC Game Challenge (http://magic.ntu.edu.sg/).
 
 [Freakolution](https://www.youtube.com/watch?v=HZn-pMRpLiU)
 

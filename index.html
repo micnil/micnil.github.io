@@ -1,17 +1,56 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-<div class="home">
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Michael Nilsson</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        {% include post.html %}
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href='http://fonts.googleapis.com/css?family=Raleway:600,400,300' rel='stylesheet' type='text/css'>
 
-      </li>
-    {% endfor %}
-  </ul>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">
 
-</div>
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript" src="transitions.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body onload="load('about.html')">
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+  <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item"><a class="navbar-link" onclick="load('about.html')">About</a></li>
+          <li class="navbar-item"><a class="navbar-link" onclick="load('projects.html')">Projects</a></li>
+          <li class="navbar-item"><a class="navbar-link" onclick="load('cv.html')">CV</a></li>
+        </ul>
+    </nav>
+
+      <div id ="content">
+
+      </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

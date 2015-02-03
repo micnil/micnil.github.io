@@ -4,9 +4,12 @@
       <h4>Freakolution</h4>
       <p>Freakolution is a 2D/3D hybrid multiplayer game made by me and three team members in Unity3D for a Game Design course at Nanyang Technological University (NTU) in singapore</p>
       <div class="more">
+      <div class="center" id="freakolution_trailer">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/HZn-pMRpLiU" frameborder="0" allowfullscreen></iframe>
-        <p> The game is a wave-survival game with a top-down perspective. The game won first prize in the MAGIC game challenge competition at NTU for outstanding performance. It can be played by four people on the same screen (not split screen) and was intended for a console platform. The game was written in C# and it gave me good base knowledge for the language.</p> 
-        <p>Project can be found on <a href="https://github.com/kbladin/DracoLabs_Freakolution">Github</a> and <a href="https://www.youtube.com/watch?v=HZn-pMRpLiU">Youtube</a></p>
+      </div>
+        <p> The game is a wave-survival game with a top-down perspective. Freakolution won first prize in the MAGIC game challenge competition at NTU for outstanding performance. It can be played by four people on the same screen (not split screen) and was intended for a console platform. The game was written in C# and it gave me good base knowledge for the language.</p> 
+
+        <p>Project can be found on <a href="https://github.com/kbladin/DracoLabs_Freakolution">Github</a> (together with the game design document) and <a href="https://www.youtube.com/watch?v=HZn-pMRpLiU">Youtube</a></p>
       </div>
     </div>
   </div>
@@ -14,14 +17,20 @@
     <div class="twelve columns box" onclick="onBoxClickEvent(event)">
       <h4>MMDG</h4>
       <p> Massive Multiplayer Dome Game (MMDG) is a system that allows a developer to connect
-      his/her game to a server (MMDG-server), so that players can connect and control the game through 
+      their program to a server (MMDG-server), so that players can connect and control it through 
       their phone.</p>
       <div class="more">
-        <p> The system was created by me and six other team members for our under graduate examination project. Its intended use
-        was for an audience at a dome theater at the Visualization Centre in Norrköping, Sweden, to connect to a small and simple game
-        through their phone while waiting for the dome-show.</p> 
+        <p> 
+        The system was created by me and six other team members for our under-graduate examination project. Our customer was <a href="http://visualiseringscenter.se/">Visualization Center C</a> in Norrköping Sweden, which hosts a large-scale arena for public visits and events including media labs, interactive exhibitions and an immersive 3D fulldome theatre. Our assignment was to make it possible for an audience at the dome theatre to connect to an application through their phone's web-browser, displaying a customizable interface, so that they can interact with the show. It was also intended to be used as a pre-show entertainment for the audience to be able to play a small and simple multiplayer game in the dome while waiting for the show to start. 
+        </p>
+        <p>
+        A developer can customize the GUI that displays on the users phone with a XML configuration file. When users connect to the server the GUI is rendered and a websocket connection is established. Then a TCP connection needs to be established between the developers application and the MMDG-server. If it is used in the dome-theatre, a MMDG-core class written in C++ can be used for this connection. When the user interacts with the developer-defined buttons, messages are sent to the application.    
+        </p> 
 
-        <p> the proof-of-concept-game we created allowed around one hundred concurrent clients to play at once on the same screen</p>
+        <p> the proof-of-concept-game we created was called RobberCop. It allowed around one hundred concurrent clients to play the game at once on the same screen</p>
+        <div class="center"> <img class ="u-max-full-width" id="mmdg_pic" src="images/MMDGSYSTEM.png"/></div> 
+        <p class="small_text"> attempt to show system design, and communication between modules. </p>
+        <p>This project really introduced us to many aspects of software development. Working with a real customer with a big team (eight people) and following a development methodology (Scrum). We had to learn about internet protocols, server programming and writing programs for the dome-theatre. Java was used for the server, Javascript and HTML/CSS for the GUI, and OpenGL with a framework called SGCT for the game.</p>
         <p>Project can be found on <a href="https://github.com/PhilBurridge/MMDG">Github</a></p>
       </div>
     </div>
@@ -32,7 +41,15 @@
       <h4>B-spline Editor</h4>
       <p> A simple B-spline editor made by me for a 3D Modelling course at Nanyang Technological University (NTU) in singapore</p>
         <div class="more">
-          <p> The editor is not very advanced or intuitive unfortunatly. It can render B-splines with two different algorithms. The Deboor algorithm and a uniform algorithm. The uniform algorithm first transforms the B-splines into Bezier curves and renders them individually with different amount of samples. The control points can only be manipulated if you specify the B-spline data in a text file and upload it to the editor. This was done because our examinator requested it. If you dont use text files, you only get uniform B-splines. </p> 
+          <p> The editor is not very advanced or intuitive unfortunatly. The assignment was to be able to render a B-spline with a uniform algorithm and a Adaptive algorithm from a text file that specifies: </p>
+          <ul>
+            <li>The degree of B-spline</li>
+            <li>The number of Control Points</li>
+            <li>Knot sequence in 1 row</li>
+            <li>Control points, 1 point per row</li>
+          </ul>
+          <p>When this was done, I decided to further develop the the program with another algorithm called DeBoor algorithm and improve the user interface a bit. Now you can create B-splines directly in the Canvas and move the control points around. There is still no way to specify the knot sequence from the interface, so it only renders uniform B-splines</p>
+          
           <p>Project can be found on <a href="https://github.com/micnil/B-spline_plotter">Github</a> and <a href="/B-spline_plotter">demopage</a></p>
         </div>
     </div>

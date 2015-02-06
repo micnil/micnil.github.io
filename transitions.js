@@ -40,12 +40,12 @@ function onBoxClickEvent(e){
 
 
 
-	if(more.clientHeight){
-		more.style.height = "0px";
-		more.style.visibility = "hidden";
+	if(more.style.display=="inline"){
+
+		more.style.display = "none";
 	}
 	else{
-		more.style.height = "auto";
-		more.style.visibility = "visible";	
+
+		more.style.display = "inline";
 	}
 };

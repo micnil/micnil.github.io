@@ -14,7 +14,7 @@ function load(file) {
 	xhr.send();
 };
 
-function onBoxClickEvent(e){
+/*function onBoxClickEvent(e){
 	var more=e.target;
 	if(more.hasChildNodes()){
 
@@ -41,4 +41,11 @@ function onBoxClickEvent(e){
 	else{
 		more.style.display = "inline";
 	}
+};*/
+
+
+function onBoxClickEvent(e){
+	//var more = $(e.currentTarget).children('.more');
+	$(e.currentTarget).children('.more').toggleClass('hidden');
 };
+

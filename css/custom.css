@@ -61,7 +61,7 @@ td h1{
 	margin-bottom: 0;
 }
 td h4{
-	margin-bottom: 0;	
+	margin-bottom: 0;
 }
 
 body{
@@ -85,7 +85,7 @@ body{
 	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);*/
 }
 .navbar {
-  display: none; 
+  display: none;
   margin-bottom: 5px;
 }
 .arrow {
@@ -96,20 +96,28 @@ body{
 	font-size: small;
 }
 .more {
-	display:none;
+	padding-top: 2px;
+	box-sizing: border-box;
+	max-height: 800px;
+	-webkit-transition: max-height 0.8s;
+	transition: max-height 0.8s;
+	overflow: hidden;
 }
+.hidden {
+	max-height: 1px;
+}
+
 .center{
 	width:100%;
 	text-align: center;
 }
 
 .icon {
-display: inline-block;
-width: 16px;
-height: 16px;
-vertical-align: middle;
-margin-left: 10px;
-   
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin-left: 10px;
 }
 a{
 	text-decoration: none;

@@ -45,7 +45,6 @@ function load(file) {
 
 
 function onBoxClickEvent(e){
-	console.log('event fired')
 	$(e.currentTarget).children('.more').toggleClass('hidden');
 };
 

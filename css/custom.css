@@ -176,9 +176,9 @@ a{
 }
 
 .navbar li:before {
-content: "/";
+	content: "/";
 }
 
 .navbar li:first-child:before {
-content: none;
+	content: none;
 }

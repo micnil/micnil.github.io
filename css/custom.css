@@ -20,7 +20,8 @@
 .tname{
 	width:2	0rem;
 	text-align: center;
-	vertical-align: bottom;
+	//vertical-align: bottom;
+	padding: 0 auto;
 }
 .cv-header{
 	padding-top: 1em;

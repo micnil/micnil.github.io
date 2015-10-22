@@ -32,7 +32,7 @@ html,body {
 }
 .cv-header{
 	padding-top: 1em;
-	padding-left:0.5em;
+	//padding-left:0.5em;
 }
 .bottom-border{
 	border-width: 1px;
@@ -126,6 +126,10 @@ body{
 	vertical-align: middle;
 	margin-left: 10px;
 	color:#828282;
+}
+.icon-cv {
+	margin-right: 10px;
+	color:#555555;
 }
 a{
 	text-decoration: none;

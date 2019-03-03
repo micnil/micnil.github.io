@@ -1,20 +1,30 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Menu from './Menu';
 import styled from 'styled-components';
+import Menu from './Menu';
 
-const Brand = styled(Link)`
-  color: rgba(0, 0, 0, 0.85);
-  line-height: 1em;
+const BrandLink = styled(Link)`
+  display: none;
+
+  @media only screen and (min-width: 768px) {
+    display: initial;
+  }
+
   :hover {
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.85);
   }
 `;
 
+const BrandText = styled.h1`
+  margin: 0px;
+  color: rgba(0, 0, 0, 0.75);
+  line-height: 1em;
+`;
+
 const Nav = styled.nav`
-  width: 960px;
+  background-color: rgb(255, 255, 255);
+  max-width: 960px;
   display: flex;
   margin: auto;
   padding: 1rem;
@@ -31,9 +41,9 @@ const Header = ({ siteTitle }) => (
         <Link to={'/projects'}>Projects</Link>
         <Link to={'/cv'}>CV</Link>
       </Menu>
-      <Brand to="/">
-        <h2 style={{ margin: '0px' }}>{siteTitle}</h2>
-      </Brand>
+      <BrandLink to="/">
+        <BrandText>{siteTitle}</BrandText>
+      </BrandLink>
     </Nav>
   </header>
 );

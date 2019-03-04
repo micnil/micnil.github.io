@@ -19,10 +19,9 @@ const GlobalStyle = createGlobalStyle`
 const PageContainer = styled.main`
   width: 100%;
   max-width: 960px;
-  margin-right: auto;
-  margin-left: auto;
-  min-height: 640px;
+  margin: auto;
   background-color: rgb(255, 255, 255);
+  overflow: hidden;
 `;
 
 const Layout = ({ children }) => {

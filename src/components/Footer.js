@@ -8,11 +8,12 @@ const Container = styled.footer`
   background-color: rgb(255, 255, 255);
   border-top: 1px solid rgba(0, 0, 0, 0.15);
   padding: 1rem;
+  text-align: center;
 `;
 
 const Footer = ({ children, author }) => (
   <Container>
-    <span>© {new Date().getFullYear()} • {author}</span>
+    <span>© {new Date().getFullYear()} • {author}. All rights reserved.</span>
   </Container>
 );
 

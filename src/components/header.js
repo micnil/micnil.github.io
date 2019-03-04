@@ -33,13 +33,17 @@ const Nav = styled.nav`
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 `;
 
+const activeStyles = {
+  fontWeight: "700"
+}
+
 const Header = ({ siteTitle }) => (
   <header>
     <Nav>
       <Menu>
-        <Link to={'/'}>About</Link>
-        <Link to={'/projects'}>Projects</Link>
-        <Link to={'/cv'}>CV</Link>
+        <Link to={'/'} activeStyle={activeStyles}>About</Link>
+        <Link to={'/projects'} activeStyle={activeStyles}>Projects</Link>
+        <Link to={'/cv'} activeStyle={activeStyles}>CV</Link>
       </Menu>
       <BrandLink to="/">
         <BrandText>{siteTitle}</BrandText>

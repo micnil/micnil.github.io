@@ -31,13 +31,19 @@ const ContactContainer = styled.div`
   display: flex;
 `;
 
+const Contact = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 1.1em;
+`;
+
 const SocialLinks = styled.div`
-  padding: 1.5em;
+  display: flex;
+  align-items: center;
   & ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
@@ -46,6 +52,7 @@ const SocialLinks = styled.div`
   & li {
     display: flex;
     align-items: center;
+    margin-left: 0.7em;
   }
 
   & svg {
@@ -74,12 +81,14 @@ const ProfileContainerDesktop = styled.div`
   display: none;
   @media only screen and (min-width: 768px) {
     display: block;
+    flex: 1 0.5 400px;
   }
 `;
 
 const ProfileContainerMobile = styled.div`
   width: 4em;
   display: inline-block;
+  flex: 0.0 1 250px;
   @media only screen and (min-width: 768px) {
     display: none;
   }
@@ -95,46 +104,45 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" keywords={['software', 'developer']} />
-      
       <MobileOnlyGreeting><h1>Hello, I'm Michael</h1></MobileOnlyGreeting>
       <IntroImage src={IntroCommitSvg} alt="Introduction to Michael Nilsson" />
       <ContactContainer>
         <ProfileContainerDesktop>
           <RoundImg fluid={data.photo.childImageSharp.fluid} />
         </ProfileContainerDesktop>
-        <SocialLinks>
+        <Contact>
           <HTMLContent content={data.content.html}></HTMLContent>
-          <ul>
-            <li>
-              <ProfileContainerMobile><RoundImg fluid={data.photo.childImageSharp.fluid} /></ProfileContainerMobile>
-            </li>
-            <li>
+          <SocialLinks>
+            <ProfileContainerMobile><RoundImg fluid={data.photo.childImageSharp.fluid} /></ProfileContainerMobile>
+            <ul>
+              <li>
                 <FaTwitter />
                 <a href="https://twitter.com/micnil_">micnil_</a>
-            </li>
-            <li>
-              <FaGithub />
-              <a href="https://github.com/micnil">micnil</a>
-            </li>
-            <li>
-              <FaStackOverflow />
-              <a href="https://stackoverflow.com/users/3346060/micnil">micnil</a>
-            </li>
-            <li>
-              <FaLinkedin />
-              <a href="https://www.linkedin.com/in/nilssonmichael">nilssondev</a>
-            </li>
-            <li>
-              <FaEnvelope />
-              <span>
-                {firstname}
-                <span style={{ display: 'none' }} />
-                &#64;{lastname}
-                <span>{null}</span>&#46;dev
-              </span>
-            </li>
-          </ul>
-        </SocialLinks>
+              </li>
+              <li>
+                <FaGithub />
+                <a href="https://github.com/micnil">micnil</a>
+              </li>
+              <li>
+                <FaStackOverflow />
+                <a href="https://stackoverflow.com/users/3346060/micnil">micnil</a>
+              </li>
+              <li>
+                <FaLinkedin />
+                <a href="https://www.linkedin.com/in/nilssonmichael">nilssondev</a>
+              </li>
+              <li>
+                <FaEnvelope />
+                <span>
+                  {firstname}
+                  <span style={{ display: 'none' }} />
+                  &#64;{lastname}
+                  <span>{null}</span>&#46;dev
+                </span>
+              </li>
+            </ul>
+          </SocialLinks>
+        </Contact>
       </ContactContainer>
     </Layout>
   );

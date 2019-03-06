@@ -116,7 +116,7 @@ Author: Michael Nilsson <`}</span><YellowText><span>
 </span></YellowText><span>{`>
 Date:   Sun Mar 3 19:20:58 2019 +0200
 
-    `}</span><YellowText>[#2157] Add introduction to Michael Nilsson</YellowText><span>{`
+    [#2157] `}</span><YellowText>Add introduction to Michael Nilsson</YellowText><span>{` 🚀
 
     Explain that Michael is a Swedish software developer, that enjoys
     solving interesting problems both professionally and as a hobby.

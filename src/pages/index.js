@@ -103,7 +103,7 @@ const IndexPage = ({ data }) => {
   let lastname = 'nilsson';
   return (
     <Layout>
-      <SEO title="Home" keywords={['software', 'developer']} />
+      <SEO title="Home" keywords={['software', 'developer', 'portfolio']} />
       <MobileOnlyGreeting><h1>Hello, I'm Michael</h1></MobileOnlyGreeting>
       <CodeBlock>
         <YellowText>></YellowText><span>{` git log -1

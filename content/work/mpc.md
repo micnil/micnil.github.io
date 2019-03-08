@@ -1,7 +1,7 @@
 ---
 key: "work"
 title: "MPC Internship"
-tag: "internship"
+tags: ["internship"]
 start: 2015
 ---
 **MPC Internship**

@@ -1,7 +1,7 @@
 ---
 key: "work"
 title: "Box Sorting Robotics"
-tag: "school"
+tags: ["school"]
 start: 2016
 ---
 **Box Sorting Robotics**

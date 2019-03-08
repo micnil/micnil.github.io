@@ -1,7 +1,7 @@
 ---
 key: "work"
 title: "npm package"
-tag: "project"
+tags: ["project"]
 start: 2018
 ---
 **vscode-diff**

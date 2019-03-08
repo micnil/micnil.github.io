@@ -1,7 +1,7 @@
 ---
 key: "work"
 title: "Stackoverflow"
-tag: "leisure"
+tags: ["leisure"]
 start: 2014
 ---
 **Active in Stackoverflow community**

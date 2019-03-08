@@ -1,7 +1,7 @@
 ---
 key: "work"
 title: "OpenSpace"
-tag: "Master's thesis"
+tags: ["Master's thesis"]
 start: 2016
 ---
 **Master's Thesis - NASA's Goddard Space Flight Center**

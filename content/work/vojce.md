@@ -1,7 +1,7 @@
 ---
 key: "work"
 title: "vojce"
-tag: "project"
+tags: ["project"]
 start: 2015
 ---
 **vojce**

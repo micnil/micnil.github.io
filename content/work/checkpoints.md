@@ -1,7 +1,7 @@
 ---
 key: "work"
 title: "Visual Studio Code extension"
-tag: "project"
+tags: ["project"]
 start: 2018
 ---
 **Checkpoints**

@@ -1,7 +1,7 @@
 ---
 key: "work"
 title: "Freakolution"
-tag: "school"
+tags: ["school"]
 start: 2016
 ---
 **Freakolution**

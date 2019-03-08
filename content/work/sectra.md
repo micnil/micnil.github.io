@@ -1,7 +1,7 @@
 ---
 key: "work"
 title: "Sectra"
-tag: "job"
+tags: ["job"]
 start: 2016
 ---
 **Software engineer at Sectra**

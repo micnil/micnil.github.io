@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import { HTMLContent } from '../components/Content';
 
-const CvSection = styled.div`
+const CvSection = styled.section`
   padding: 0.9em;
 
   h2 {

@@ -42,7 +42,7 @@ const Header = ({ siteTitle }) => (
     <Nav>
       <Menu>
         <Link to={'/'} activeStyle={activeStyles}>About</Link>
-        <Link to={'/projects'} activeStyle={activeStyles}>Projects</Link>
+        <Link to={'/work'} activeStyle={activeStyles}>Work</Link>
         <Link to={'/cv'} activeStyle={activeStyles}>CV</Link>
       </Menu>
       <BrandLink to="/">

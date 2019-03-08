@@ -5,7 +5,15 @@ import SEO from '../components/Seo';
 import { HTMLContent } from '../components/Content';
 
 const CvSection = styled.div`
-  padding: 1em;
+  padding: 0.9em;
+
+  h2 {
+    text-transform: capitalize;
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding: 1.5em;
+  }
 `;
 
 const CvRow = styled.div`

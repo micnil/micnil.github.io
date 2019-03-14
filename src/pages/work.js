@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
@@ -33,6 +34,13 @@ const ToggleReadMore = styled.span`
   }
 `;
 
+const Tag = styled.span`
+  color: #888;
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 0.8em;
+`;
+
 function reducer(state, action) {
   switch (action.type) {
     case 'readMore':
@@ -44,12 +52,44 @@ function reducer(state, action) {
   }
 }
 
+const TagList = ({ children }) => (
+  <div style={{  }}>
+    {children.map((tag, i) => (
+      <Tag key={tag}>
+        {tag}
+        {i < children.length - 1 && ',  '}
+      </Tag>
+    ))}
+  </div>
+);
+
+function Excerpt({ content, thumbnail, tags, onClickReadMore }) {
+  return (
+    <>
+      <div style={{ display: 'flex' }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <HTMLContent content={content} />
+          <ToggleReadMore onClick={onClickReadMore}>Read more</ToggleReadMore>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', flex: '1 0 auto', alignItems:"flex-end" }}>
+          <TagList>{tags}</TagList>
+          {thumbnail && (
+            <Img
+              style={{  }}
+              fixed={thumbnail.childImageSharp.fixed}
+            />
+          )}
+        </div>
+      </div>
+    </>
+  );
+}
+
 const WorkPage = ({ data }) => {
   const [state, dispatch] = useReducer(reducer, {});
 
   const posts = data.allMarkdownRemark.edges.map(edge => {
     const { node } = edge;
-
     return (
       <Post key={node.fileAbsolutePath}>
         {state[node.fileAbsolutePath] ? (
@@ -64,16 +104,14 @@ const WorkPage = ({ data }) => {
             </ToggleReadMore>
           </>
         ) : (
-          <>
-            <HTMLContent content={node.excerpt} />
-            <ToggleReadMore
-              onClick={() =>
-                dispatch({ type: 'readMore', payload: node.fileAbsolutePath })
-              }
-            >
-              Read more
-            </ToggleReadMore>
-          </>
+          <Excerpt
+            content={node.excerpt}
+            thumbnail={node.frontmatter.thumbnail}
+            tags={node.frontmatter.tags}
+            onClickReadMore={() =>
+              dispatch({ type: 'readMore', payload: node.fileAbsolutePath })
+            }
+          />
         )}
       </Post>
     );
@@ -99,6 +137,13 @@ export const query = graphql`
             title
             start
             tags
+            thumbnail {
+              childImageSharp {
+                fixed(width: 400, quality: 100) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
           fileAbsolutePath
           html

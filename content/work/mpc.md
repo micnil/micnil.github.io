@@ -3,10 +3,11 @@ key: "work"
 title: "MPC Internship"
 tags: ["internship"]
 start: 2015
+thumbnail: "../../src/images/packageExplorer2.png"
 ---
 **MPC Internship**
 
-I did an internship at one of the global leaders in VFX, where I was part of the Production Tools team and developed a web application that can browse and filter the assets that artists create. 
+I did an internship at one of the global leaders in VFX, where I was part of the Production Tools team and developed a web application that can browse and filter the assets that artists create. <div style="float:right">![Package Explorer](../../src/images/packageExplorer2.png)</div>
 <!-- end -->
 The team I was part of develops and maintains web based applications with the purpose to deal with production planning and management. This includes applications that handles scheduling, feedback/reviews, viewing of assets and shot samples (“*dailies*”), planning rendering times and priority, managing staff timesheets, administering user permissions to the intranet and more. During my time at MPC I was introduced to most aspects of the visual effects pipeline, and the technology behind it. However, my main project was to rebuild a web application called the Package Explorer from scratch, which had been non-functional for around a year due to changes in the architecture. The rebuild would allow stakeholder to give input for new requirements aswell.
 

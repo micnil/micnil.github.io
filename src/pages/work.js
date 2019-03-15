@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
@@ -53,7 +54,7 @@ function reducer(state, action) {
 }
 
 const TagList = ({ children }) => (
-  <div style={{  }}>
+  <div style={{}}>
     {children.map((tag, i) => (
       <Tag key={tag}>
         {tag}
@@ -63,20 +64,30 @@ const TagList = ({ children }) => (
   </div>
 );
 
-function Excerpt({ content, thumbnail, tags, onClickReadMore }) {
+function Excerpt({ title, content, thumbnail, tags, onClickReadMore, year }) {
   return (
     <>
-      <div style={{ display: 'flex' }}>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <HTMLContent content={content} />
-          <ToggleReadMore onClick={onClickReadMore}>Read more</ToggleReadMore>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', flex: '1 0 auto', alignItems:"flex-end" }}>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <h3>{title}</h3>
           <TagList>{tags}</TagList>
+        </div>
+        <div style={{ display: 'flex' }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              flex: '2',
+            }}
+          >
+            <HTMLContent content={content} />
+            <ToggleReadMore onClick={onClickReadMore}>Read more</ToggleReadMore>
+          </div>
           {thumbnail && (
             <Img
-              style={{  }}
-              fixed={thumbnail.childImageSharp.fixed}
+              style={{ flex: '1' }}
+              fluid={thumbnail.childImageSharp.fluid}
             />
           )}
         </div>
@@ -105,6 +116,7 @@ const WorkPage = ({ data }) => {
           </>
         ) : (
           <Excerpt
+            title={node.frontmatter.title}
             content={node.excerpt}
             thumbnail={node.frontmatter.thumbnail}
             tags={node.frontmatter.tags}
@@ -139,8 +151,8 @@ export const query = graphql`
             tags
             thumbnail {
               childImageSharp {
-                fixed(width: 400, quality: 100) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 400, quality: 70) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }

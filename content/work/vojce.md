@@ -1,11 +1,9 @@
 ---
 key: "work"
 title: "vojce"
-tags: ["project"]
+tags: ["project", "leisure"]
 start: 2015
 ---
-**vojce**
-
 A social web application for creating and answering micro-polls.
 <!-- end -->
 When discussing any kind of topic among your friends and you disagree in some matter, it could be interesting to find out what the general public thinks about it. Maybe it is about something important like the election, filosofical like life after death, useful like book review opinions or something completely absurd like what color the dress is. What if...? Would you rather...? What is most important...?

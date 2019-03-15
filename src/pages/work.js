@@ -64,35 +64,36 @@ const TagList = ({ children }) => (
   </div>
 );
 
+function PostHeader({ title, tags }) {
+  return (
+    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <h3>{title}</h3>
+      <TagList>{tags}</TagList>
+    </div>
+  );
+}
+
 function Excerpt({ title, content, thumbnail, tags, onClickReadMore, year }) {
   return (
-    <>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <h3>{title}</h3>
-          <TagList>{tags}</TagList>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <PostHeader title= {title} tags={tags} />
+      <div style={{ display: 'flex' }}>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            flex: '2',
+          }}
+        >
+          <HTMLContent content={content} />
+          <ToggleReadMore onClick={onClickReadMore}>Read more</ToggleReadMore>
         </div>
-        <div style={{ display: 'flex' }}>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              flex: '2',
-            }}
-          >
-            <HTMLContent content={content} />
-            <ToggleReadMore onClick={onClickReadMore}>Read more</ToggleReadMore>
-          </div>
-          {thumbnail && (
-            <Img
-              style={{ flex: '1' }}
-              fluid={thumbnail.childImageSharp.fluid}
-            />
-          )}
-        </div>
+        {thumbnail && (
+          <Img style={{ flex: '1' }} fluid={thumbnail.childImageSharp.fluid} />
+        )}
       </div>
-    </>
+    </div>
   );
 }
 
@@ -105,6 +106,7 @@ const WorkPage = ({ data }) => {
       <Post key={node.fileAbsolutePath}>
         {state[node.fileAbsolutePath] ? (
           <>
+            <PostHeader title= {node.frontmatter.title} tags={node.frontmatter.tags} />
             <HTMLContent content={node.html} />
             <ToggleReadMore
               onClick={() =>

@@ -153,7 +153,7 @@ export const query = graphql`
             tags
             thumbnail {
               childImageSharp {
-                fluid(maxWidth: 400, quality: 70) {
+                fluid(maxWidth: 400, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }

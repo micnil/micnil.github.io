@@ -24,6 +24,11 @@ const Post = styled.article`
   }
 `;
 
+const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+`;
+
 const ToggleReadMore = styled.span`
   font-weight: 400;
   color: #419eda;
@@ -40,6 +45,10 @@ const Tag = styled.span`
   text-transform: uppercase;
   font-style: italic;
   font-size: 0.8em;
+`;
+
+const WorkContent = styled(HTMLContent)`
+  margin-top: 0.5em;
 `;
 
 function reducer(state, action) {
@@ -64,19 +73,29 @@ const TagList = ({ children }) => (
   </div>
 );
 
-function PostHeader({ title, tags }) {
+function PostHeader({ title, tags, year }) {
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-      <h3>{title}</h3>
-      <TagList>{tags}</TagList>
-    </div>
+    <>
+      <Header>
+        <h3 style={{ marginBottom: '0em' }}>{title}</h3>
+        <TagList>{tags}</TagList>
+      </Header>
+      <em style={{ color: '#888' }}>Started: {year}</em>
+    </>
   );
 }
 
-function Excerpt({ title, content, thumbnail, tags, onClickReadMore, year }) {
+function Excerpt({
+  title,
+  content,
+  thumbnail,
+  tags,
+  onClickReadMore,
+  startYear,
+}) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <PostHeader title= {title} tags={tags} />
+      <PostHeader title={title} tags={tags} year={startYear} />
       <div style={{ display: 'flex' }}>
         <div
           style={{
@@ -86,7 +105,7 @@ function Excerpt({ title, content, thumbnail, tags, onClickReadMore, year }) {
             flex: '2',
           }}
         >
-          <HTMLContent content={content} />
+          <WorkContent content={content} />
           <ToggleReadMore onClick={onClickReadMore}>Read more</ToggleReadMore>
         </div>
         {thumbnail && (
@@ -106,8 +125,12 @@ const WorkPage = ({ data }) => {
       <Post key={node.fileAbsolutePath}>
         {state[node.fileAbsolutePath] ? (
           <>
-            <PostHeader title= {node.frontmatter.title} tags={node.frontmatter.tags} />
-            <HTMLContent content={node.html} />
+            <PostHeader
+              title={node.frontmatter.title}
+              tags={node.frontmatter.tags}
+              year={node.frontmatter.start}
+            />
+            <WorkContent content={node.html} />
             <ToggleReadMore
               onClick={() =>
                 dispatch({ type: 'readLess', payload: node.fileAbsolutePath })
@@ -122,6 +145,7 @@ const WorkPage = ({ data }) => {
             content={node.excerpt}
             thumbnail={node.frontmatter.thumbnail}
             tags={node.frontmatter.tags}
+            startYear={node.frontmatter.start}
             onClickReadMore={() =>
               dispatch({ type: 'readMore', payload: node.fileAbsolutePath })
             }

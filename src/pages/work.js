@@ -49,6 +49,10 @@ const Tag = styled.span`
 
 const WorkContent = styled(HTMLContent)`
   margin-top: 0.5em;
+  
+  /* Image caption */
+  a + em { display: block; text-align: center;}
+
 `;
 
 function reducer(state, action) {

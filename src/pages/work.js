@@ -53,6 +53,12 @@ const WorkContent = styled(HTMLContent)`
   /* Image caption */
   a + em { display: block; text-align: center;}
 
+  iframe {
+    display:block;
+    margin: auto;
+    margin-bottom: 1em;
+  }
+
 `;
 
 function reducer(state, action) {

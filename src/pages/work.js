@@ -177,7 +177,7 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       filter: { frontmatter: { key: { eq: "work" } } }
-      sort: { fields: frontmatter___start, order: DESC }
+      sort: { fields: [frontmatter___start, frontmatter___title], order: [DESC, DESC] }
     ) {
       edges {
         node {

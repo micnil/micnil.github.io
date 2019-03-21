@@ -1,7 +1,7 @@
 ---
 key: "work"
 title: "MPC Internship"
-tags: ["internship", "web"]
+tags: ["internship", "vfx", "web"]
 start: 2015
 thumbnail: "../images/packageExplorer2.png"
 ---

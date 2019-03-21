@@ -24,6 +24,10 @@ const Post = styled.article`
   }
 `;
 
+const PageHeader = styled.div`
+  margin: 2em;
+`
+
 const Header = styled.header`
   display: flex;
   justify-content: space-between;
@@ -168,6 +172,9 @@ const WorkPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" keywords={['portfolio', 'work', 'projects']} />
+      <PageHeader>
+        <h4> Presenting a selection of projects I am, or have been, working on.</h4>
+      </PageHeader>
       {posts}
     </Layout>
   );

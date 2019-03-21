@@ -15,7 +15,7 @@ My perception is that most diff tools available today was developed in another e
 * Word/character diff.
 * Side-by-side diff.
 
-I want a single application I can turn to when I am about to look at, and review other peoples code. Not necessarily all the features of a Git GUI client. I want to be able to search for the commits i want to review, then select them all at once, or one by one. Then I want to write comments, right there in the code. 
+I want a single application I can turn to when I am about to look at, and review other people's code. Not necessarily all the features of a Git GUI client. I want to be able to search for the commits i want to review, then select them all at once, or one by one. Then I want to write comments, right there in the code. 
 
 One feature that I haven't seen anywhere else, is being able to review multiple non-sequential commits on a single branch, without including all commits in-between. A use case specifically for trunk based development, where you typically won't review the diff of an entire branch (e.g. Pull request).
 

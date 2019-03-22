@@ -7,4 +7,4 @@ end: 2014
 ---
 **First Prize Winner – [MAGIC](https://magic.ntu.edu.sg/Pages/default.aspx) Game Challenge**
 
-“In recognition of outstanding performance in MAGIC Game Challenge” For the game “Freakolution” I and three team members made for a Game Design Course. Trailer can be found at [youtube](https://www.youtube.com/watch?v=HZn-pMRpLiU).
+“In recognition of outstanding performance in MAGIC Game Challenge” For the game “Freakolution” I and three team members made for a Game Design Course. Trailer can be found on [youtube](https://www.youtube.com/watch?v=HZn-pMRpLiU).

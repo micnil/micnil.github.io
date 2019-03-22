@@ -7,4 +7,4 @@ end: 2016
 ---
 **Media Technology and Engineering, 300hp - Linköpings University**
 
-M.Sc. in Computer Science with focus on Computer Graphics, Interaction Design, Signal Processing and Software Engineering. Achieved Bachelor degree and pursuing Master. Grade point average: 4,5. (maximum 5)
+M.Sc. in Media Technology, a computer science program with focus on computer graphics, interaction design, signal processing and math. Grade point average: 4,5 (maximum 5).

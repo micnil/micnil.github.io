@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import { HTMLContent } from '../components/Content'
 import CodeBlock from "../components/CodeBlock";
+import Email from '../components/Email';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import {
@@ -108,12 +109,7 @@ const IndexPage = ({ data }) => {
       <CodeBlock>
         <YellowText>></YellowText><span>{` git log -1
 `}</span><GreyText>commit daff16378c079fb52c1bd27dc6f630988b0d222a</GreyText><span>{`
-Author: Michael Nilsson <`}</span><YellowText><span>
-{firstname}
-<span style={{ display: 'none' }} />
-&#64;{lastname}
-<span>{null}</span>&#46;dev
-</span></YellowText><span>{`>
+Author: Michael Nilsson <`}</span><YellowText><Email /></YellowText><span>{`>
 Date:   Sun Mar 3 19:20:58 2019 +0200
 
     [#2157] `}</span><YellowText>Add introduction to Michael Nilsson</YellowText><span>{` 🚀
@@ -153,12 +149,7 @@ Date:   Sun Mar 3 19:20:58 2019 +0200
               </li>
               <li>
                 <FaEnvelope />
-                <span>
-                  {firstname}
-                  <span style={{ display: 'none' }} />
-                  &#64;{lastname}
-                  <span>{null}</span>&#46;dev
-                </span>
+                <Email />
               </li>
             </ul>
           </SocialLinks>

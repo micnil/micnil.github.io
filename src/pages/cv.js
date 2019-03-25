@@ -10,6 +10,18 @@ const CvSection = styled.section`
 
   h2 {
     text-transform: capitalize;
+    @media print {
+      font-size: 22px;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  @media print {
+    padding: 0em 0em 1.5em 0em;
+
+    :last-child {
+      padding: 0em;
+    }
   }
 
   @media only screen and (min-width: 768px) {
@@ -25,13 +37,24 @@ const CvYear = styled.div`
   flex: 1;
   border-right: 1px solid;
   color: #8c8c8c;
+
+  @media print {
+    font-size: 15px;
+  }
 `;
 
 const CvEntry = styled(HTMLContent)`
-  flex: 4;
+  flex: 5;
   padding-left: 0.5em;
   & p {
     margin-bottom: 0px;
+  }
+
+  @media print {
+    flex: 6;
+    & p {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -73,7 +96,7 @@ const CvPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" keywords={['portfolio', 'cv']} />
+      <SEO title="CV" keywords={['portfolio', 'cv']} />
       {sections}
     </Layout>
   );

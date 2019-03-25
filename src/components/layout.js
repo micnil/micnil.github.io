@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     height: 100%;
   }
+
   body {
     height: 100%;
     background-color: rgb(242, 242, 242);
@@ -30,7 +31,7 @@ const Layout = ({ children }) => {
       query {
         site {
           siteMetadata {
-            title,
+            title
             author
           }
         }
@@ -41,7 +42,7 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={site.siteMetadata.title} />
       <PageContainer>{children}</PageContainer>
-      <Footer author={site.siteMetadata.author}></Footer>
+      <Footer author={site.siteMetadata.author} />
       <GlobalStyle />
     </>
   );

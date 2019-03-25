@@ -9,6 +9,10 @@ const Container = styled.footer`
   border-top: 1px solid rgba(0, 0, 0, 0.15);
   padding: 1rem;
   text-align: center;
+
+  @media print {
+    display: none !important;
+  }
 `;
 
 const Footer = ({ children, author }) => (

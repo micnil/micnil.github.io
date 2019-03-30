@@ -7,6 +7,7 @@ import CodeBlock from "../components/CodeBlock";
 import Email from '../components/Email';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import {
   FaLinkedin,
   FaStackOverflow,
@@ -100,8 +101,6 @@ const RoundImg = styled(Img)`
 `;
 
 const IndexPage = ({ data }) => {
-  let firstname = 'michael';
-  let lastname = 'nilsson';
   return (
     <Layout>
       <SEO title="Home" keywords={['software', 'developer', 'portfolio']} />
@@ -133,19 +132,19 @@ Date:   Sun Mar 3 19:20:58 2019 +0200
             <ul>
               <li>
                 <FaTwitter />
-                <a href="https://twitter.com/micnil_">micnil_</a>
+                <OutboundLink href="https://twitter.com/micnil_">micnil_</OutboundLink>
               </li>
               <li>
                 <FaGithub />
-                <a href="https://github.com/micnil">micnil</a>
+                <OutboundLink href="https://github.com/micnil">micnil</OutboundLink>
               </li>
               <li>
                 <FaStackOverflow />
-                <a href="https://stackoverflow.com/users/3346060/micnil">micnil</a>
+                <OutboundLink href="https://stackoverflow.com/users/3346060/micnil">micnil</OutboundLink>
               </li>
               <li>
                 <FaLinkedin />
-                <a href="https://www.linkedin.com/in/nilssonmichael">nilssondev</a>
+                <OutboundLink href="https://www.linkedin.com/in/nilssonmichael">nilssondev</OutboundLink>
               </li>
               <li>
                 <FaEnvelope />

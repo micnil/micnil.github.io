@@ -4,7 +4,7 @@ title: "Active in Stackoverflow community"
 tags: ["leisure"]
 start: 2014
 ---
-I am regularly active on StackOverflow, a poplular Q&A site for professional and enthusiast programmers. From here my 50+ answers and 20+ question has reached over 100 000 people. I am one of the top answerer of all time in within the subject THREE.js (a javascript WebGL library).
+I am regularly active on StackOverflow, a poplular Q&A site for professional and enthusiast programmers. From here my 50+ answers and 20+ question has reached over 100 000 people. Most of my answers are related to JavaScript or THREE.js (a JavaScript WebGL library).
 <!-- end -->
 Recent years i've found myself enjoying answering questions on Stack Overflow. A question is usually complex enough for me to research it and learning something new, and simple enough to fit into one evening, appeasing my programming urge. It is a nice way to give back to the community, for all that it has given me, and rewarding to know that your helping others that are facing problems.
 

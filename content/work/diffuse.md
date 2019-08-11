@@ -2,7 +2,7 @@
 key: "work"
 title: "diffuse"
 subtitle: "Diff and review tool"
-tags: ["leisure", "electron"]
+tags: ["leisure", "typescript","electron"]
 thumbnail: "../images/diffuse-files.png"
 start: 2018
 ---

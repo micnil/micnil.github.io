@@ -1,7 +1,7 @@
 ---
 key: "work"
 title: "Rainbone"
-tags: ["university", "game design", "opengl"]
+tags: ["university", "c++","game design", "opengl" ]
 thumbnail: "../images/rainbone-thumbnail.png"
 start: 2016
 ---

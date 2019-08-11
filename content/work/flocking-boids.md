@@ -1,7 +1,7 @@
 ---
 key: "work"
 title: "Flocking Boids"
-tags: ["university", "VFX", "python"]
+tags: ["university", "python", "VFX"]
 subtitle: "Autodesk Maya plugin"
 thumbnail: "../images/boids.png"
 start: 2015

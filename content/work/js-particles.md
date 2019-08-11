@@ -1,7 +1,7 @@
 ---
 key: "work"
 title: "JS Particles"
-tags: ["leisure", "web"]
+tags: ["leisure", "javascript"]
 start: 2014
 ---
 Just a simple 2D particle system, marking my initial interest in JavaScript.

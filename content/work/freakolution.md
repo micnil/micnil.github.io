@@ -1,7 +1,7 @@
 ---
 key: "work"
 title: "Freakolution"
-tags: ["university", "game design", "singapore"]
+tags: ["university", "c#", "game design"]
 subtitle: "Award winning game"
 thumbnail: "../images/freakolution-thumbnail.png"
 start: 2016

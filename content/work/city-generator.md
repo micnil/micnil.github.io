@@ -1,7 +1,7 @@
 ---
 key: "work"
 title: "City Generator"
-tags: ["university", "webgl"]
+tags: ["university", "javascript","webgl"]
 start: 2016
 ---
 A web application that generates a procedural city in WebGL.

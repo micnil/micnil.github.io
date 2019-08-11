@@ -1,7 +1,7 @@
 ---
 key: "work"
 title: "Box Sorting Robotics"
-tags: ["university", "webgl", "animation"]
+tags: ["university", "javascript","webgl", "animation"]
 thumbnail: "../images/box-sorting-thumbnail.png"
 start: 2016
 ---

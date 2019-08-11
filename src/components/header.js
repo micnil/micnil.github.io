@@ -17,14 +17,20 @@ const BrandLink = styled(Link)`
   }
 `;
 
-const BrandText = styled.h1`
-  margin: 0px;
+const BrandTitle = styled.h1`
+  margin: 0px 0px 7px 0px;
   color: rgba(0, 0, 0, 0.75);
   line-height: 1em;
 
   @media print {
     font-size: 35px;
   }
+`;
+
+const BrandText = styled.p`
+  margin: 0em 2em 0em 0em;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 16px;
 `;
 
 const Nav = styled.nav`
@@ -68,6 +74,11 @@ const ContactInfo = styled.div`
   }
 `;
 
+const StackBox = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const activeStyles = {
   fontWeight: "700"
 }
@@ -75,7 +86,10 @@ const activeStyles = {
 const Header = ({ siteTitle }) => (
   <header>
     <PrintHeader>
-      <BrandText>{siteTitle}</BrandText>
+      <StackBox>
+        <BrandTitle>{siteTitle}</BrandTitle>
+        <BrandText>I am a Swedish software developer that enjoys solving interesting problems with code both professionally and as a hobby. I have a great interest in new technologies and I am driven by building innovative solutions. My strengths lie in web technologies, .NET and computer graphics.</BrandText>
+      </StackBox>
       <ContactInfo>
         <ul>
           <li>+46 704 25 3993</li>
@@ -92,7 +106,7 @@ const Header = ({ siteTitle }) => (
         <Link to={'/cv'} activeStyle={activeStyles}>CV</Link>
       </Menu>
       <BrandLink to="/">
-        <BrandText>{siteTitle}</BrandText>
+        <BrandTitle>{siteTitle}</BrandTitle>
       </BrandLink>
     </Nav>
   </header>

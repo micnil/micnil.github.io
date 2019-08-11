@@ -70,7 +70,7 @@ const CvPage = ({ data }) => {
     const rows = nodes.map(node => {
       let endYear = null;
       if (!node.frontmatter.end) {
-        endYear = '- current';
+        endYear = '- Present';
       } else if (node.frontmatter.end !== node.frontmatter.start) {
         endYear = `- ${node.frontmatter.end}`;
       }

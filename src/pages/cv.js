@@ -72,6 +72,16 @@ const CvEntry = styled(HTMLContent)`
   }
 `;
 
+function compareDates(a, b) {
+  if(!a.frontmatter.end) {
+    return -1;
+  }
+  if(!b.frontmatter.end) {
+    return 1;
+  }
+  return a.frontmatter.end !== b.frontmatter.end ? b.frontmatter.end - a.frontmatter.end : b.frontmatter.start - a.frontmatter.start;
+}
+
 const CvPage = ({ data }) => {
   let cvMap = {};
   let listMap = {};
@@ -85,8 +95,9 @@ const CvPage = ({ data }) => {
       cvMap[section] = [...cvMap[section], edge.node];
     }
   }
-  const sections = Object.entries(cvMap).map(([section, nodes]) => {
-    const rows = nodes.map(node => {
+  const sections = Object.entries(cvMap)
+    .map(([section, nodes]) => {
+    const rows = nodes.sort(compareDates).map(node => {
       let endYear = null;
       if (!node.frontmatter.end) {
         endYear = '- Present';

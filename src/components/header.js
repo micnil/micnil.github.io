@@ -55,7 +55,8 @@ const PrintHeader = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1em;
+    padding: 0.9em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   }
 `;
 
@@ -63,6 +64,7 @@ const ContactInfo = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 15px;
+  white-space: nowrap;
   & ul {
     list-style: none;
     padding: 0;

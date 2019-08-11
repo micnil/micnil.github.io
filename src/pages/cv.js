@@ -17,10 +17,13 @@ const CvSection = styled.section`
   }
 
   @media print {
-    padding: 0em 0em 1.5em 0em;
-
+    padding: 0em 0.9em 1.7em 0.9em;
+    page-break-inside: avoid;
     :last-child {
       padding: 0em;
+    }
+    :first-child {
+      margin-top: 1.0em;
     }
   }
 
@@ -35,7 +38,7 @@ const CvRow = styled.div`
 
 const CvYear = styled.div`
   flex: 1;
-  border-right: 1px solid;
+  border-right: 1px solid rgba(0, 0, 0, 0.15);;
   color: #8c8c8c;
 
   @media print {
@@ -49,22 +52,38 @@ const CvEntry = styled(HTMLContent)`
   & p {
     margin-bottom: 0px;
   }
+  & li {
+    margin-bottom: 0px;
+  }
 
   @media print {
     flex: 6;
     & p {
       font-size: 16px;
     }
+    & li {
+      font-size: 16px;
+    }
+    & a {
+      text-decoration: inherit; 
+      color: inherit;
+      font-weight: inherit;
+    }
   }
 `;
 
 const CvPage = ({ data }) => {
   let cvMap = {};
+  let listMap = {};
   for (const edge of data.allMarkdownRemark.edges) {
     let section = edge.node.frontmatter.section;
-
-    cvMap[section] = cvMap[section] || [];
-    cvMap[section] = [...cvMap[section], edge.node];
+    if (edge.node.frontmatter.type === "list") {
+      listMap[section] = listMap[section] || [];
+      listMap[section] = [...listMap[section], edge.node];
+    } else {
+      cvMap[section] = cvMap[section] || [];
+      cvMap[section] = [...cvMap[section], edge.node];
+    }
   }
   const sections = Object.entries(cvMap).map(([section, nodes]) => {
     const rows = nodes.map(node => {
@@ -74,7 +93,6 @@ const CvPage = ({ data }) => {
       } else if (node.frontmatter.end !== node.frontmatter.start) {
         endYear = `- ${node.frontmatter.end}`;
       }
-
       return (
         <CvRow key={node.fileAbsolutePath}>
           <CvYear>
@@ -94,10 +112,25 @@ const CvPage = ({ data }) => {
     );
   });
 
+  const lists = Object.entries(listMap).map(([section, nodes]) => {
+    const rows = nodes.map(node => {
+      return (
+        <CvEntry content={node.html} />
+      );
+    });
+    return (
+      <CvSection key={section}>
+        <h2>{section}</h2>
+        {rows}
+      </CvSection>
+    );
+  });
+
   return (
     <Layout>
       <SEO title="CV" keywords={['portfolio', 'cv']} />
       {sections}
+      {lists}
     </Layout>
   );
 };
@@ -115,6 +148,7 @@ export const query = graphql`
             start
             end
             section
+            type
           }
           fileAbsolutePath
           html

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled, { createGlobalStyle } from 'styled-components';
 
-import Header from './Header';
+import Header, { PrintHeader } from './Header';
 import Footer from './Footer';
 
 const GlobalStyle = createGlobalStyle`
@@ -26,21 +26,29 @@ const PageContainer = styled.main`
 `;
 
 const Layout = ({ children }) => {
-  const { site } = useStaticQuery(
+  const { site, markdownRemark } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
             title
-            author
+            phone
+            address
+            url
           }
+        }
+        markdownRemark(frontmatter: {key: {eq: "about-me"}}) {
+          html
         }
       }
     `
   );
+  const { phone, title, address, url } = site.siteMetadata;
+  const about = markdownRemark.html;
   return (
     <>
-      <Header siteTitle={site.siteMetadata.title} />
+      <Header siteTitle={title} />
+      <PrintHeader siteTitle={title} phone={phone} address={address} url={url} about={about} />
       <PageContainer>{children}</PageContainer>
       <Footer author={site.siteMetadata.author} />
       <GlobalStyle />

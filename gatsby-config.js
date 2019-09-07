@@ -3,6 +3,9 @@ module.exports = {
     title: `Michael Nilsson`,
     description: `Portfolio for software developer Michael Nilsson.`,
     author: `Michael Nilsson`,
+    address: `Storgatan 6, 582 23 Linköping`,
+    phone: `+46 704 25 3993`,
+    url: `https://nilsson.dev`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

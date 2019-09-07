@@ -126,7 +126,7 @@ const CvPage = ({ data }) => {
   const lists = Object.entries(listMap).map(([section, nodes]) => {
     const rows = nodes.map(node => {
       return (
-        <CvEntry content={node.html} />
+        <CvEntry key={node.fileAbsolutePath} content={node.html} />
       );
     });
     return (

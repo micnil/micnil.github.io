@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types'
 
 const Container = styled.footer`
   max-width: 960px;
@@ -15,10 +16,14 @@ const Container = styled.footer`
   }
 `;
 
-const Footer = ({ children, author }) => (
+const Footer = ({ author }) => (
   <Container>
     <span>© {new Date().getFullYear()} • {author}. All rights reserved.</span>
   </Container>
 );
+
+Footer.propTypes = {
+  author: PropTypes.string
+}
 
 export default Footer;

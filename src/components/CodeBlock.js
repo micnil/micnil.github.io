@@ -47,6 +47,7 @@ const Dot = styled.span`
   display: inline-block;
   margin-right: 0.5em;
   margin-bottom: 0.8em;
+  background-color: ${props => props.color || 'palevioletred'};
 
   @media only screen and (min-width: 615px) {
     height: 12px;
@@ -54,26 +55,14 @@ const Dot = styled.span`
   }
 `;
 
-const RedDot = styled(Dot)`
-  background-color: rgb(255, 95, 86);
-`;
-
-const YellowDot = styled(Dot)`
-  background-color: rgb(255, 189, 46);
-`;
-
-const GreenDot = styled(Dot)`
-  background-color: rgb(39, 201, 63);
-`;
-
 const CodeBlock = ({ children }) => {
   return (
     <Preformatted>
       <Terminal>
         <div>
-          <RedDot />
-          <YellowDot />
-          <GreenDot />
+          <Dot color={'#ff5f56'} />
+          <Dot color={'#ffbd2e'} />
+          <Dot color={'#27c93f'} />
         </div>
         {children}
       </Terminal>

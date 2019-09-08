@@ -50,10 +50,10 @@ function Excerpt({
 Excerpt.propTypes = {
   title: PropTypes.string,
   content: PropTypes.string,
-  thumbnail: PropTypes.string,
+  thumbnail: PropTypes.object,
   tags: PropTypes.arrayOf(PropTypes.string),
   onClickReadMore: PropTypes.func,
-  startYear: PropTypes.string
+  startYear: PropTypes.number
 }
 
 export default Excerpt;

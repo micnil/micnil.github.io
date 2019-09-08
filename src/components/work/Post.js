@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import PostHeader from './PostHeader';
 import WorkContent from './WorkContent';
@@ -19,8 +19,9 @@ const StyledPost = styled.article`
 
 const Post = ({filePath, title, tags, year, content, excerpt, thumbnail}) => {
   const [readMore, setReadMore] = useState(false);
+  const postElement = useRef(null);
   return (
-    <StyledPost key={filePath}>
+    <StyledPost ref={postElement}>
       {readMore ? (
         <>
           <PostHeader
@@ -30,7 +31,10 @@ const Post = ({filePath, title, tags, year, content, excerpt, thumbnail}) => {
           />
           <WorkContent content={content} />
           <BorderlessButton
-            onClick={() => setReadMore(false)}
+            onClick={() => {
+              setReadMore(false);
+              postElement.current.scrollIntoView({ behavior: 'smooth' });
+            }}
           >
             Read less
           </BorderlessButton>

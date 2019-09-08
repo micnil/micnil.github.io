@@ -14,6 +14,7 @@ const WorkPage = ({ data }) => {
     const { node } = edge;
     return (
       <Post 
+        key={node.fileAbsolutePath}
         filePath={node.fileAbsolutePath}
         title={node.frontmatter.title}
         tags={node.frontmatter.tags}

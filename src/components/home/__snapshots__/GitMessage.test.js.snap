@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GitMessage renders correctly 1`] = `
+<pre
+  className="sc-bdVaJa cEOuNe"
+>
+  <code
+    className="sc-bwzfXH gdMrTi"
+  >
+    <div>
+      <span
+        className="sc-htpNat iFhYwv"
+        color="#ff5f56"
+      />
+      <span
+        className="sc-htpNat kmdSYw"
+        color="#ffbd2e"
+      />
+      <span
+        className="sc-htpNat hMNoyt"
+        color="#27c93f"
+      />
+    </div>
+    <span
+      className="sc-bxivhb lgObjd"
+    >
+      &gt;
+    </span>
+    <span>
+       git log -1
+
+    </span>
+    <span
+      className="sc-ifAKCX fizYCp"
+    >
+      commit daff16378c079fb52c1bd27dc6f630988b0d222a
+    </span>
+    <span>
+      
+Author: Michael Nilsson &lt;
+    </span>
+    <span
+      className="sc-bxivhb lgObjd"
+    >
+      <span>
+        michael
+        <span
+          style={
+            Object {
+              "display": "none",
+            }
+          }
+        />
+        @
+        nilsson
+        <span />
+        .dev
+      </span>
+    </span>
+    <span>
+      &gt;
+Date:   Sun Mar 3 19:20:58 2019 +0200
+
+    [#2157] 
+    </span>
+    <span
+      className="sc-bxivhb lgObjd"
+    >
+      Add introduction to Michael Nilsson
+    </span>
+    <span>
+       🚀
+
+    Explain that Michael is a Swedish software developer, that enjoys
+    solving interesting problems both professionally and as a hobby.
+    Promote his interests in new technology, and that he is driven by
+    building innovative solutions. Mention that he has a strong 
+    background in 
+    </span>
+    <span
+      className="sc-bxivhb lgObjd"
+    >
+      web technologies
+    </span>
+    <span>
+      , 
+    </span>
+    <span
+      className="sc-bxivhb lgObjd"
+    >
+      .NET
+    </span>
+    <span>
+       and 
+    </span>
+    <span
+      className="sc-bxivhb lgObjd"
+    >
+      computer graphics
+    </span>
+    <span>
+      . 
+
+    Also point out that he has a 
+    </span>
+    <span
+      className="sc-bxivhb lgObjd"
+    >
+      Master of Science in Media Technology
+    </span>
+    <span>
+      .
+    </span>
+  </code>
+</pre>
+`;

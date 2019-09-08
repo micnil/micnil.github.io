@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Tag = styled.span`
-color: #888;
-text-transform: uppercase;
-font-style: italic;
-font-size: 0.8em;
+  color: #888;
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 0.8em;
 `;
 
 const Header = styled.header`
@@ -44,5 +45,11 @@ function PostHeader({ title, tags, year }) {
     </>
   );
 }
+
+PostHeader.propTypes = {
+  title: PropTypes.string,
+  tags: PropTypes.arrayOf(PropTypes.string),
+  year: PropTypes.number,
+};
 
 export default PostHeader;

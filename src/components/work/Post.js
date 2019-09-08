@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import PostHeader from './PostHeader';
 import WorkContent from './WorkContent';
@@ -6,7 +7,6 @@ import Excerpt from './Excerpt';
 import BorderlessButton from '../BorderlessButton';
 
 const StyledPost = styled.article`
-  
   border-top: 1px solid rgba(25, 17, 34, 0.075);
   padding: 1em;
 
@@ -17,18 +17,14 @@ const StyledPost = styled.article`
   }
 `;
 
-const Post = ({filePath, title, tags, year, content, excerpt, thumbnail}) => {
+const Post = ({ title, tags, year, content, excerpt, thumbnail }) => {
   const [readMore, setReadMore] = useState(false);
   const postElement = useRef(null);
   return (
     <StyledPost ref={postElement}>
       {readMore ? (
         <>
-          <PostHeader
-            title={title}
-            tags={tags}
-            year={year}
-          />
+          <PostHeader title={title} tags={tags} year={year} />
           <WorkContent content={content} />
           <BorderlessButton
             onClick={() => {
@@ -51,6 +47,15 @@ const Post = ({filePath, title, tags, year, content, excerpt, thumbnail}) => {
       )}
     </StyledPost>
   );
+};
+
+Post.propTypes = {
+  title: PropTypes.string,
+  content: PropTypes.string,
+  excerpt: PropTypes.string,
+  thumbnail: PropTypes.object,
+  tags: PropTypes.arrayOf(PropTypes.string),
+  year: PropTypes.number,
 };
 
 export default Post;

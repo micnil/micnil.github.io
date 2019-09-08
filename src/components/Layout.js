@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
+import theme from '../utils/theme';
 
 import Header, { PrintHeader } from './Header';
 import Footer from './Footer';
@@ -13,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     height: 100%;
-    background-color: rgb(242, 242, 242);
+    background-color: ${({ theme }) => theme.backgroundSecondary || '#fff'};
   }
 `;
 
@@ -21,9 +22,10 @@ const PageContainer = styled.main`
   width: 100%;
   max-width: 960px;
   margin: auto;
-  background-color: rgb(255, 255, 255);
+  background-color: ${({ theme }) => theme.backgroundPrimary};
   overflow: hidden;
 `;
+PageContainer.defaultProps = { theme: { backgroundPrimary: '#fff' } };
 
 const Layout = ({ children }) => {
   const { site, markdownRemark } = useStaticQuery(
@@ -37,7 +39,7 @@ const Layout = ({ children }) => {
             url
           }
         }
-        markdownRemark(frontmatter: {key: {eq: "about-me"}}) {
+        markdownRemark(frontmatter: { key: { eq: "about-me" } }) {
           html
         }
       }
@@ -46,13 +48,21 @@ const Layout = ({ children }) => {
   const { phone, title, address, url } = site.siteMetadata;
   const about = markdownRemark.html;
   return (
-    <>
-      <Header siteTitle={title} />
-      <PrintHeader siteTitle={title} phone={phone} address={address} url={url} about={about} />
-      <PageContainer>{children}</PageContainer>
-      <Footer author={site.siteMetadata.author} />
-      <GlobalStyle />
-    </>
+    <ThemeProvider theme={theme}>
+      <>
+        <Header siteTitle={title} />
+        <PrintHeader
+          siteTitle={title}
+          phone={phone}
+          address={address}
+          url={url}
+          about={about}
+        />
+        <PageContainer>{children}</PageContainer>
+        <Footer author={site.siteMetadata.author} />
+        <GlobalStyle />
+      </>
+    </ThemeProvider>
   );
 };
 

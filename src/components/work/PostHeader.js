@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Tag = styled.span`
-  color: #888;
+  color: ${({ theme }) => theme.textSecondary || '#888'};
   text-transform: uppercase;
   font-style: italic;
   font-size: 0.8em;
@@ -20,7 +20,7 @@ const Header = styled.header`
 `;
 
 const Subtitle = styled.em`
-  color: #888;
+  color: ${({ theme }) => theme.textSecondary || '#888'};
 `;
 
 const TagList = ({ children }) => (

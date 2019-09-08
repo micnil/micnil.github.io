@@ -36,13 +36,19 @@ const CvRow = styled.div`
 
 const CvYear = styled.div`
   flex: 1;
-  border-right: 1px solid rgba(0, 0, 0, 0.15);
-  color: #8c8c8c;
+  border-right: 1px solid ${({ theme }) => theme.borderSecondary};
+  color: ${({ theme }) => theme.textSecondary};
 
   @media print {
     font-size: 15px;
   }
 `;
+CvYear.defaultProps = {
+  theme: {
+    borderSecondary: '#000',
+    textSecondary: '#888'
+  }
+} 
 
 const CvContent = styled(HTMLContent)`
   flex: 5;

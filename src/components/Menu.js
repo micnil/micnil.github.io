@@ -10,13 +10,13 @@ const MenuItems = styled.div`
   }
 
   & a {
-    color: #444;
+    color: ${({ theme }) => theme.textNeutral};
     text-decoration: none;
     vertical-align: bottom;
 
     :hover {
       text-decoration: none;
-      color: #1eaedb;
+      color: ${({ theme }) => theme.textAccent};
     }
   }
 
@@ -31,6 +31,12 @@ export const MenuItem = styled.li`
   padding: 0 0.8rem;
   margin-bottom: 0;
 `;
+MenuItems.defaultProps = {
+  theme: {
+    textAccent: 'teal',
+    textNeutral: '#444',
+  },
+};
 
 const Menu = ({ children }) => (
   <MenuItems>

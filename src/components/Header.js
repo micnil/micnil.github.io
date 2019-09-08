@@ -29,7 +29,7 @@ const StyledPrintHeader = styled.header`
 
   p {
     margin: 0em 2em 0em 0em;
-    font-size: 16px;    
+    font-size: 16px;
   }
 `;
 
@@ -44,8 +44,8 @@ const ContactInfo = styled.div`
     margin: 0;
   }
   & li {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
   }
 `;
 
@@ -57,7 +57,7 @@ const Column = styled.div`
 /**
  * Header that is only visible when page is printed.
  */
-export const PrintHeader = ({siteTitle, phone, url, address, about }) => (
+export const PrintHeader = ({ siteTitle, phone, url, address, about }) => (
   <StyledPrintHeader>
     <Column>
       <BrandTitle>{siteTitle}</BrandTitle>
@@ -67,8 +67,12 @@ export const PrintHeader = ({siteTitle, phone, url, address, about }) => (
       <ul>
         <li>{phone}</li>
         <li>{address}</li>
-        <li><Email /></li>
-        <li><a href={url}>{url}</a></li>
+        <li>
+          <Email />
+        </li>
+        <li>
+          <a href={url}>{url}</a>
+        </li>
       </ul>
     </ContactInfo>
   </StyledPrintHeader>
@@ -76,7 +80,7 @@ export const PrintHeader = ({siteTitle, phone, url, address, about }) => (
 
 PrintHeader.propTypes = {
   siteTitle: PropTypes.string,
-  phone: PropTypes.string, 
+  phone: PropTypes.string,
   address: PropTypes.string,
   url: PropTypes.string,
   about: PropTypes.string,
@@ -84,10 +88,10 @@ PrintHeader.propTypes = {
 
 PrintHeader.defaultProps = {
   siteTitle: ``,
-  phone: ``, 
+  phone: ``,
   address: ``,
   url: ``,
-  about: ``
+  about: ``,
 };
 
 const BrandLink = styled(Link)`
@@ -103,7 +107,7 @@ const BrandLink = styled(Link)`
 `;
 
 const Nav = styled.nav`
-  background-color: rgb(255, 255, 255);
+  background-color: ${({ theme }) => theme.backgroundPrimary};
   max-width: 960px;
   display: flex;
   margin: auto;
@@ -116,22 +120,33 @@ const Nav = styled.nav`
     display: none !important;
   }
 `;
+Nav.defaultProps = {
+  theme: {
+    backgroundPrimary: '#fff',
+  },
+};
 
 const activeStyles = {
-  fontWeight: "700"
-}
+  fontWeight: '700',
+};
 
 /**
- * The site header and navbar - will not be visible when 
- * page is printed. 
+ * The site header and navbar - will not be visible when
+ * page is printed.
  */
 const Header = ({ siteTitle }) => (
   <header>
     <Nav>
       <Menu>
-        <Link to={'/'} activeStyle={activeStyles}>About</Link>
-        <Link to={'/work'} activeStyle={activeStyles}>Work</Link>
-        <Link to={'/cv'} activeStyle={activeStyles}>CV</Link>
+        <Link to={'/'} activeStyle={activeStyles}>
+          About
+        </Link>
+        <Link to={'/work'} activeStyle={activeStyles}>
+          Work
+        </Link>
+        <Link to={'/cv'} activeStyle={activeStyles}>
+          CV
+        </Link>
       </Menu>
       <BrandLink to="/">
         <BrandTitle>{siteTitle}</BrandTitle>

@@ -73,69 +73,84 @@ const CvEntry = styled(HTMLContent)`
 `;
 
 function compareDates(a, b) {
-  if(!a.frontmatter.end) {
+  if(!a.end) {
     return -1;
   }
-  if(!b.frontmatter.end) {
+  if(!b.end) {
     return 1;
   }
-  return a.frontmatter.end !== b.frontmatter.end ? b.frontmatter.end - a.frontmatter.end : b.frontmatter.start - a.frontmatter.start;
+  return a.end !== b.end ? b.end - a.end : b.start - a.start;
+}
+
+function sectionEntryRenderer(entry) {
+  let endYear = null;
+    if (!entry.end) {
+      endYear = '- Present';
+    } else if (entry.end !== entry.start) {
+      endYear = `- ${entry.end}`;
+    }
+    return (
+      <CvRow key={entry.filePath}>
+        <CvYear>
+          {entry.start}
+          {endYear}
+        </CvYear>
+        <CvEntry content={entry.content} />
+      </CvRow>
+    );
+}
+
+function listEntryRenderer(entry) {
+    return (
+      <CvEntry key={entry.filePath} content={entry.content} />
+    );
+}
+
+const Section = ({section, entries, entryRenderer}) => {
+  const rows = entries.sort(compareDates).map(entry => {
+    return entryRenderer(entry);
+  });
+
+  return (
+    <CvSection key={section}>
+      <h2>{section}</h2>
+      {rows}
+    </CvSection>
+  );
 }
 
 const CvPage = ({ data }) => {
   let cvMap = {};
   let listMap = {};
   for (const edge of data.allMarkdownRemark.edges) {
-    let section = edge.node.frontmatter.section;
-    if (edge.node.frontmatter.type === "list") {
-      listMap[section] = listMap[section] || [];
-      listMap[section] = [...listMap[section], edge.node];
-    } else {
-      cvMap[section] = cvMap[section] || [];
-      cvMap[section] = [...cvMap[section], edge.node];
+    let mapToUpdate = edge.node.frontmatter.type === "list" ? listMap : cvMap
+    const section = edge.node.frontmatter.section;
+    const entry = {
+      ...edge.node.frontmatter,
+      content: edge.node.html,
+      filePath: edge.node.fileAbsolutePath,
     }
+    mapToUpdate[section] = mapToUpdate[section] || [];
+    mapToUpdate[section] = [...mapToUpdate[section], entry];
   }
+
   const sections = Object.entries(cvMap)
-    .map(([section, nodes]) => {
-    const rows = nodes.sort(compareDates).map(node => {
-      let endYear = null;
-      if (!node.frontmatter.end) {
-        endYear = '- Present';
-      } else if (node.frontmatter.end !== node.frontmatter.start) {
-        endYear = `- ${node.frontmatter.end}`;
-      }
-      return (
-        <CvRow key={node.fileAbsolutePath}>
-          <CvYear>
-            {node.frontmatter.start}
-            {endYear}
-          </CvYear>
-          <CvEntry content={node.html} />
-        </CvRow>
-      );
-    });
+    .map(([section, entries]) => (
+      <Section 
+        key={section}
+        section={section}
+        entries={entries}
+        entryRenderer={sectionEntryRenderer}/>
+    ));
 
-    return (
-      <CvSection key={section}>
-        <h2>{section}</h2>
-        {rows}
-      </CvSection>
-    );
-  });
-
-  const lists = Object.entries(listMap).map(([section, nodes]) => {
-    const rows = nodes.map(node => {
-      return (
-        <CvEntry key={node.fileAbsolutePath} content={node.html} />
-      );
-    });
-    return (
-      <CvSection key={section}>
-        <h2>{section}</h2>
-        {rows}
-      </CvSection>
-    );
-  });
+  const lists = Object.entries(listMap)
+    .map(([section, entries]) => (
+      <Section 
+        key={section}
+        section={section}
+        entries={entries}
+        entryRenderer={listEntryRenderer}/>
+    ));
 
   return (
     <Layout>

@@ -28,11 +28,6 @@ const PageHeader = styled.div`
   margin: 2em;
 `
 
-const Header = styled.header`
-  display: flex;
-  justify-content: space-between;
-`;
-
 const ToggleReadMore = styled.span`
   font-weight: 400;
   color: #419eda;
@@ -77,7 +72,7 @@ function reducer(state, action) {
 }
 
 const TagList = ({ children }) => (
-  <div style={{}}>
+  <div>
     {children.map((tag, i) => (
       <Tag key={tag}>
         {tag}
@@ -87,17 +82,46 @@ const TagList = ({ children }) => (
   </div>
 );
 
+const Header = styled.header`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  h3 {
+    margin-bottom: 0em;
+  }
+`;
+
+const Subtitle = styled.em`
+  color: #888;
+`;
+
 function PostHeader({ title, tags, year }) {
   return (
     <>
       <Header>
-        <h3 style={{ marginBottom: '0em' }}>{title}</h3>
+        <h3>{title}</h3>
         <TagList>{tags}</TagList>
       </Header>
-      <em style={{ color: '#888' }}>Started: {year}</em>
+      <Subtitle>Started: {year}</Subtitle>
     </>
   );
 }
+
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const ColumnWithSpaceBetween = styled(Column)`
+  justify-content: space-between;
+  flex: 2;
+`;
 
 function Excerpt({
   title,
@@ -108,25 +132,18 @@ function Excerpt({
   startYear,
 }) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <Column>
       <PostHeader title={title} tags={tags} year={startYear} />
-      <div style={{ display: 'flex' }}>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            flex: '2',
-          }}
-        >
+      <Row>
+        <ColumnWithSpaceBetween>
           <WorkContent content={content} />
           <ToggleReadMore onClick={onClickReadMore}>Read more</ToggleReadMore>
-        </div>
+        </ColumnWithSpaceBetween>
         {thumbnail && (
           <Img style={{ flex: '1' }} fluid={thumbnail.childImageSharp.fluid} />
         )}
-      </div>
-    </div>
+      </Row>
+    </Column>
   );
 }
 

@@ -6,14 +6,14 @@ import Excerpt from './Excerpt';
 import BorderlessButton from '../BorderlessButton';
 
 const StyledPost = styled.article`
-  margin: 1em;
-  border-radius: 4px;
-  box-shadow: rgba(25, 17, 34, 0.075) 0px 3px 10px;
-  padding: 1em;
   
+  border-top: 1px solid rgba(25, 17, 34, 0.075);
+  padding: 1em;
 
   @media only screen and (min-width: 768px) {
     margin: 2em;
+    border-radius: 4px;
+    box-shadow: rgba(25, 17, 34, 0.075) 0px 3px 10px;
   }
 `;
 

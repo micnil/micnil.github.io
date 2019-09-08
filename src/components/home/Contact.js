@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import styled from 'styled-components';
-import { HTMLContent } from './Content'
-import Email from '../components/Email';
+import { HTMLContent } from '../Content'
+import Email from '../Email';
 import Img from 'gatsby-image';
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import {

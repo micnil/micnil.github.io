@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import PostHeader from './PostHeader';
 import WorkContent from './WorkContent';
 import BorderlessButton from '../BorderlessButton';
@@ -53,7 +53,7 @@ Excerpt.propTypes = {
   thumbnail: PropTypes.object,
   tags: PropTypes.arrayOf(PropTypes.string),
   onClickReadMore: PropTypes.func,
-  startYear: PropTypes.number
-}
+  startYear: PropTypes.number,
+};
 
 export default Excerpt;

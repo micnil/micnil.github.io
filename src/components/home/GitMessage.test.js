@@ -4,9 +4,7 @@ import GitMessage from './GitMessage';
 
 describe('GitMessage', () => {
   it('renders correctly', () => {
-    const tree = renderer
-      .create(<GitMessage />)
-      .toJSON();
+    const tree = renderer.create(<GitMessage />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

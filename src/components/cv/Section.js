@@ -35,7 +35,7 @@ const CvRow = styled.div`
 `;
 
 const CvYear = styled.div.attrs(() => ({
-  'data-testid':"year" 
+  'data-testid': 'year',
 }))`
   flex: 1;
   border-right: 1px solid ${({ theme }) => theme.borderSecondary};
@@ -48,12 +48,12 @@ const CvYear = styled.div.attrs(() => ({
 CvYear.defaultProps = {
   theme: {
     borderSecondary: '#000',
-    textSecondary: '#888'
-  }
-} 
+    textSecondary: '#888',
+  },
+};
 
 const CvContent = styled(HTMLContent).attrs(() => ({
-  'data-testid':"content" 
+  'data-testid': 'content',
 }))`
   flex: 5;
   padding-left: 0.5em;
@@ -109,7 +109,7 @@ function entryRenderer(entry) {
 }
 
 function simpleEntryRenderer(entry) {
-  return <CvContent key={entry.filePath} content={entry.content}/>;
+  return <CvContent key={entry.filePath} content={entry.content} />;
 }
 
 const Section = ({ section, entries, entryRenderer }) => {

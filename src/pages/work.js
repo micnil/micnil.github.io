@@ -7,13 +7,13 @@ import Post from '../components/work/Post';
 
 const PageHeader = styled.div`
   margin: 2em;
-`
+`;
 
 const WorkPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(edge => {
     const { node } = edge;
     return (
-      <Post 
+      <Post
         key={node.fileAbsolutePath}
         filePath={node.fileAbsolutePath}
         title={node.frontmatter.title}
@@ -21,7 +21,8 @@ const WorkPage = ({ data }) => {
         year={node.frontmatter.start}
         content={node.html}
         excerpt={node.excerpt}
-        thumbnail={node.frontmatter.thumbnail}/>
+        thumbnail={node.frontmatter.thumbnail}
+      />
     );
   });
 
@@ -29,7 +30,10 @@ const WorkPage = ({ data }) => {
     <Layout>
       <SEO title="Work" keywords={['portfolio', 'work', 'projects']} />
       <PageHeader>
-        <h4> Presenting a selection of projects I am, or have been, working on.</h4>
+        <h4>
+          {' '}
+          Presenting a selection of projects I am, or have been, working on.
+        </h4>
       </PageHeader>
       {posts}
     </Layout>
@@ -40,7 +44,10 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       filter: { frontmatter: { key: { eq: "work" } } }
-      sort: { fields: [frontmatter___start, frontmatter___title], order: [DESC, DESC] }
+      sort: {
+        fields: [frontmatter___start, frontmatter___title]
+        order: [DESC, DESC]
+      }
     ) {
       edges {
         node {

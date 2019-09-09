@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { HTMLContent } from '../Content'
+import { HTMLContent } from '../Content';
 import Email from '../Email';
 import Img from 'gatsby-image';
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import {
   FaLinkedin,
   FaStackOverflow,
@@ -66,7 +66,7 @@ const ProfileContainerDesktop = styled.div`
 const ProfileContainerMobile = styled.div`
   width: 4em;
   display: inline-block;
-  flex: 0.0 1 250px;
+  flex: 0 1 250px;
   @media only screen and (min-width: 768px) {
     display: none;
   }
@@ -76,7 +76,7 @@ const RoundImg = styled(Img)`
   border-radius: 50%;
 `;
 
-const Contact = (props) => {
+const Contact = props => {
   return (
     <StyledContact>
       <ProfileContainerDesktop>
@@ -89,34 +89,38 @@ const Contact = (props) => {
             <RoundImg fluid={props.image.fluid} />
           </ProfileContainerMobile>
           <ul>
-            {props.twitterHandle &&
-            <li>
-              <FaTwitter />
-              <OutboundLink href={props.twitterUrl}>
-                {props.twitterHandle}
-              </OutboundLink>
-            </li>}
-            {props.githubHandle &&
-            <li>
-              <FaGithub />
-              <OutboundLink href={props.githubUrl}>
-                {props.githubHandle}
-              </OutboundLink>
-            </li>}
-            {props.stackOverflowHandle && 
-            <li>
-              <FaStackOverflow />
-              <OutboundLink href={props.stackOverflowUrl}>
-                {props.stackOverflowHandle}
-              </OutboundLink>
-            </li>}
-            {props.linkedinHandle && 
-            <li>
-              <FaLinkedin />
-              <OutboundLink href={props.linkedinUrl}>
-                {props.linkedinHandle}
-              </OutboundLink>
-            </li>}
+            {props.twitterHandle && (
+              <li>
+                <FaTwitter />
+                <OutboundLink href={props.twitterUrl}>
+                  {props.twitterHandle}
+                </OutboundLink>
+              </li>
+            )}
+            {props.githubHandle && (
+              <li>
+                <FaGithub />
+                <OutboundLink href={props.githubUrl}>
+                  {props.githubHandle}
+                </OutboundLink>
+              </li>
+            )}
+            {props.stackOverflowHandle && (
+              <li>
+                <FaStackOverflow />
+                <OutboundLink href={props.stackOverflowUrl}>
+                  {props.stackOverflowHandle}
+                </OutboundLink>
+              </li>
+            )}
+            {props.linkedinHandle && (
+              <li>
+                <FaLinkedin />
+                <OutboundLink href={props.linkedinUrl}>
+                  {props.linkedinHandle}
+                </OutboundLink>
+              </li>
+            )}
             <li>
               <FaEnvelope />
               <Email />

@@ -6,7 +6,6 @@ import Contact from '../components/home/Contact';
 import GitMessage from '../components/home/GitMessage';
 import { graphql } from 'gatsby';
 
-
 const MobileOnlyGreeting = styled.div`
   text-align: center;
   @media only screen and (min-width: 768px) {
@@ -22,20 +21,22 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" keywords={['software', 'developer', 'portfolio']} />
-      <MobileOnlyGreeting><h1>Hello, I'm Michael</h1></MobileOnlyGreeting>
+      <MobileOnlyGreeting>
+        <h1>Hello, I'm Michael</h1>
+      </MobileOnlyGreeting>
       <GitMessage />
-      <Contact 
+      <Contact
         body={data.content.html}
         image={data.photo.childImageSharp}
-        twitterHandle={"micnil_"}
-        twitterUrl={"https://twitter.com/micnil_"}
-        githubHandle={"micnil"}
-        githubUrl={"https://github.com/micnil"}
-        linkedinHandle={"nilssondev"}
-        linkedinUrl={"https://www.linkedin.com/in/nilssonmichael"}
-        stackOverflowHandle={"micnil"}
-        stackOverflowUrl={"https://stackoverflow.com/users/3346060/micnil"}
-        />
+        twitterHandle={'micnil_'}
+        twitterUrl={'https://twitter.com/micnil_'}
+        githubHandle={'micnil'}
+        githubUrl={'https://github.com/micnil'}
+        linkedinHandle={'nilssondev'}
+        linkedinUrl={'https://www.linkedin.com/in/nilssonmichael'}
+        stackOverflowHandle={'micnil'}
+        stackOverflowUrl={'https://stackoverflow.com/users/3346060/micnil'}
+      />
     </Layout>
   );
 };

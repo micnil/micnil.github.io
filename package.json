@@ -41,7 +41,7 @@
     "react-test-renderer": "^16.9.0"
   },
   "keywords": [
-    "gatsby"
+    "portfolio", "developer"
   ],
   "license": "MIT",
   "scripts": {
@@ -56,9 +56,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/micnil/micnil.github.io"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/micnil/micnil.github.io/issues"
   }
 }

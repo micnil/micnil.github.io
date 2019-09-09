@@ -3,32 +3,34 @@ import { cleanup, render } from '@testing-library/react';
 
 import { SectionWithYear } from './Section';
 
+const entries = [
+  {
+    filePath: 'C:/test/file1.md',
+    start: 2016,
+    end: 2017,
+    content: 'foo',
+  },
+  {
+    filePath: 'C:/test/file2.md',
+    start: 2014,
+    content: 'bar',
+  },
+  {
+    filePath: 'C:/test/file3.md',
+    start: 2016,
+    end: 2016,
+    content: 'baz',
+  },
+];
+
 const data = {
   section: 'Experience',
-  entries: [
-    {
-      filePath: 'C:/test/file1.md',
-      start: 2016,
-      end: 2017,
-      content: 'foo',
-    },
-    {
-      filePath: 'C:/test/file2.md',
-      start: 2014,
-      content: 'bar',
-    },
-    {
-      filePath: 'C:/test/file3.md',
-      start: 2016,
-      end: 2016,
-      content: 'baz',
-    },
-  ],
+  entries: entries,
 };
 
-afterEach(cleanup);
-
 describe('SectionWithYear', () => {
+  afterEach(cleanup);
+
   it('sorts entries correctly', () => {
     const { getAllByTestId } = render(
       <SectionWithYear section={data.section} entries={data.entries} />
@@ -40,17 +42,27 @@ describe('SectionWithYear', () => {
     });
   });
 
-  it('displays years correctly', () => {
-    const { queryByText } = render(
-      <SectionWithYear section={data.section} entries={data.entries} />
+  it('displays past range correctly', () => {
+    const { getByTestId } = render(
+      <SectionWithYear section={data.section} entries={[entries[0]]} />
     );
+    const pastRange = getByTestId('year');
+    expect(pastRange.textContent).toBe('2016 - 2017');
+  });
 
-    const current = queryByText('2014 - Present');
-    const singleYear = queryByText('2016');
-    const pastRange = queryByText('2016 - 2017');
+  it('displays current correctly', () => {
+    const { getByTestId } = render(
+      <SectionWithYear section={data.section} entries={[entries[1]]} />
+    );
+    const current = getByTestId('year');
+    expect(current.textContent).toBe('2014 - Present');
+  });
 
-    expect(current).toBeTruthy();
-    expect(singleYear).toBeTruthy();
-    expect(pastRange).toBeTruthy();
+  it('displays single year correctly', () => {
+    const { getByTestId } = render(
+      <SectionWithYear section={data.section} entries={[entries[2]]} />
+    );
+    const singleYear = getByTestId('year');
+    expect(singleYear.textContent).toBe('2016');
   });
 });

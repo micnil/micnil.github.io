@@ -34,7 +34,9 @@ const CvRow = styled.div`
   display: flex;
 `;
 
-const CvYear = styled.div`
+const CvYear = styled.div.attrs(() => ({
+  'data-testid':"year" 
+}))`
   flex: 1;
   border-right: 1px solid ${({ theme }) => theme.borderSecondary};
   color: ${({ theme }) => theme.textSecondary};
@@ -111,7 +113,7 @@ function simpleEntryRenderer(entry) {
 }
 
 const Section = ({ section, entries, entryRenderer }) => {
-  const rows = entries.sort(compareDates).map(entry => {
+  const rows = [...entries].sort(compareDates).map(entry => {
     return entryRenderer(entry);
   });
 

@@ -50,7 +50,9 @@ CvYear.defaultProps = {
   }
 } 
 
-const CvContent = styled(HTMLContent)`
+const CvContent = styled(HTMLContent).attrs(() => ({
+  'data-testid':"content" 
+}))`
   flex: 5;
   padding-left: 0.5em;
   & p {
@@ -89,9 +91,9 @@ function compareDates(a, b) {
 function entryRenderer(entry) {
   let endYear = null;
   if (!entry.end) {
-    endYear = '- Present';
+    endYear = ' - Present';
   } else if (entry.end !== entry.start) {
-    endYear = `- ${entry.end}`;
+    endYear = ` - ${entry.end}`;
   }
   return (
     <CvRow key={entry.filePath}>
@@ -105,7 +107,7 @@ function entryRenderer(entry) {
 }
 
 function simpleEntryRenderer(entry) {
-  return <CvContent key={entry.filePath} content={entry.content} />;
+  return <CvContent key={entry.filePath} content={entry.content}/>;
 }
 
 const Section = ({ section, entries, entryRenderer }) => {

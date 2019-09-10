@@ -41,7 +41,8 @@
     "react-test-renderer": "^16.9.0"
   },
   "keywords": [
-    "portfolio", "developer"
+    "portfolio",
+    "developer"
   ],
   "license": "MIT",
   "scripts": {

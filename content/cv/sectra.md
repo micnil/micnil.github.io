@@ -3,6 +3,7 @@ key: "cv"
 title: "Sectra - Linköping"
 section: "experience"
 start: 2016
+end: 2020
 ---
 **Software Engineer - Sectra, Linköpng**
 

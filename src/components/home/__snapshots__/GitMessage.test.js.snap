@@ -2,27 +2,27 @@
 
 exports[`GitMessage renders correctly 1`] = `
 <pre
-  className="sc-bdVaJa cEOuNe"
+  className="sc-AxjAm hTpcjL"
 >
   <code
-    className="sc-bwzfXH gdMrTi"
+    className="sc-AxirZ cuFrrJ"
   >
     <div>
       <span
-        className="sc-htpNat iFhYwv"
+        className="sc-AxiKw uWtou"
         color="#ff5f56"
       />
       <span
-        className="sc-htpNat kmdSYw"
+        className="sc-AxiKw ddzYGD"
         color="#ffbd2e"
       />
       <span
-        className="sc-htpNat hMNoyt"
+        className="sc-AxiKw gbhgXY"
         color="#27c93f"
       />
     </div>
     <span
-      className="sc-bxivhb lgObjd"
+      className="sc-AxhCb efboPY"
     >
       &gt;
     </span>
@@ -31,7 +31,7 @@ exports[`GitMessage renders correctly 1`] = `
 
     </span>
     <span
-      className="sc-ifAKCX fizYCp"
+      className="sc-AxhUy kqlEyP"
     >
       commit daff16378c079fb52c1bd27dc6f630988b0d222a
     </span>
@@ -40,7 +40,7 @@ exports[`GitMessage renders correctly 1`] = `
 Author: Michael Nilsson &lt;
     </span>
     <span
-      className="sc-bxivhb lgObjd"
+      className="sc-AxhCb efboPY"
     >
       <span>
         michael
@@ -64,7 +64,7 @@ Date:   Sun Mar 3 19:20:58 2019 +0200
     [#2157] 
     </span>
     <span
-      className="sc-bxivhb lgObjd"
+      className="sc-AxhCb efboPY"
     >
       Add introduction to Michael Nilsson
     </span>
@@ -78,7 +78,7 @@ Date:   Sun Mar 3 19:20:58 2019 +0200
     background in 
     </span>
     <span
-      className="sc-bxivhb lgObjd"
+      className="sc-AxhCb efboPY"
     >
       web technologies
     </span>
@@ -86,7 +86,7 @@ Date:   Sun Mar 3 19:20:58 2019 +0200
       , 
     </span>
     <span
-      className="sc-bxivhb lgObjd"
+      className="sc-AxhCb efboPY"
     >
       .NET
     </span>
@@ -94,7 +94,7 @@ Date:   Sun Mar 3 19:20:58 2019 +0200
        and 
     </span>
     <span
-      className="sc-bxivhb lgObjd"
+      className="sc-AxhCb efboPY"
     >
       computer graphics
     </span>
@@ -104,7 +104,7 @@ Date:   Sun Mar 3 19:20:58 2019 +0200
     Also point out that he has a 
     </span>
     <span
-      className="sc-bxivhb lgObjd"
+      className="sc-AxhCb efboPY"
     >
       Master of Science in Media Technology
     </span>

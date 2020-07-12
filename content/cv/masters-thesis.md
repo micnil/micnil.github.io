@@ -2,8 +2,8 @@
 key: "cv"
 title: "Master's Thesis - NASA's Goddard Space Flight Center"
 section: "education"
-start: 2016
-end: 2016
+start: "2016"
+end: "2016"
 ---
 **Master's Thesis - NASA's Goddard Space Flight Center**
 

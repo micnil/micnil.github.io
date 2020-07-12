@@ -2,8 +2,8 @@
 key: "cv"
 title: "MPC - London"
 section: "experience"
-start: 2015
-end: 2015
+start: "2015-07-01"
+end: "2015-08-26"
 ---
 **Software intern - MPC, London**
 

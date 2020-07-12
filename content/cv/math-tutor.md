@@ -2,8 +2,8 @@
 key: "cv"
 title: "Math Tutor - Linköpings University"
 section: "experience"
-start: 2011
-end: 2012
+start: "2012-09-01"
+end: "2013-03-01"
 ---
 **Math Tutor - Linköpings University**
 

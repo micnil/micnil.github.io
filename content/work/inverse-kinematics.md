@@ -3,7 +3,7 @@ key: "work"
 title: "Box Sorting Robotics"
 tags: ["university", "javascript","webgl", "animation"]
 thumbnail: "../images/box-sorting-thumbnail.png"
-start: 2016
+start: "2016"
 ---
 For a course called 2D & 3D Animation at Nanyang Technological University in Singapore, I developed a robot arm simulation that tries to sort boxes based on color while the user disrupts with the mouse pointer.
 <!-- end -->

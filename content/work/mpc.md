@@ -2,7 +2,7 @@
 key: "work"
 title: "MPC Internship"
 tags: ["internship", "javascript", "vfx"]
-start: 2015
+start: "2015"
 thumbnail: "../images/packageExplorer2.png"
 ---
 I did an 8 week internship at one of the global leaders in VFX, where I was part of the Production Tools team and developed a web application that can browse and filter the assets that artists create. <div style="float:right">![Package Explorer](../images/packageExplorer2.png)</div>

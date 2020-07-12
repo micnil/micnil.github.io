@@ -3,7 +3,7 @@ key: "work"
 title: "Rainbone"
 tags: ["university", "c++","game design", "opengl" ]
 thumbnail: "../images/rainbone-thumbnail.png"
-start: 2016
+start: "2016"
 ---
 A voice controlled puzzle game for large audience in dome environments.
 <!-- end -->

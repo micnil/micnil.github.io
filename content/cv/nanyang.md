@@ -2,8 +2,8 @@
 key: "cv"
 title: "Nanyang Technological University - Singapore"
 section: "education"
-start: 2014
-end: 2015
+start: "2014"
+end: "2015"
 ---
 **Nanyang Technological University - Singapore**
 

@@ -2,8 +2,8 @@
 key: "cv"
 title: "First Prize Winner – MAGIC Game Challenge"
 section: "honors & awards"
-start: 2014
-end: 2014
+start: "2014"
+end: "2014"
 ---
 **First Prize Winner – [MAGIC](https://magic.ntu.edu.sg/Pages/default.aspx) Game Challenge**
 

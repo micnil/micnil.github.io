@@ -2,8 +2,8 @@
 key: "cv"
 title: "Media Technology and Engineering, 300hp - Linköpings University"
 section: "education"
-start: 2011
-end: 2016
+start: "2011"
+end: "2016"
 ---
 **Media Technology and Engineering, 300hp - Linköpings University**
 

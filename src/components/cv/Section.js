@@ -37,6 +37,8 @@ const CvRow = styled.div`
 const CvYear = styled.div.attrs(() => ({
   'data-testid': 'year',
 }))`
+  display: flex;
+  flex-direction: column;
   flex: 1;
   border-right: 1px solid ${({ theme }) => theme.borderSecondary};
   color: ${({ theme }) => theme.textSecondary};
@@ -91,17 +93,29 @@ function compareDates(a, b) {
 }
 
 function entryRenderer(entry) {
-  let endYear = null;
-  if (!entry.end) {
-    endYear = ' - Present';
-  } else if (entry.end !== entry.start) {
-    endYear = ` - ${entry.end}`;
-  }
+  const dateOptionsMonthYear = { month: 'short', year: 'numeric' };
+  const dateOptionsyear = { year: 'numeric' };
+  const isRange = entry.end !== entry.start;
+  const isCurrent = !entry.end;
+
+  let startLabel = null;
+  let endLabel = null;
+
+  const dateOptions =
+    entry.start.length > 4 ? dateOptionsMonthYear : dateOptionsyear;
+  startLabel = new Date(entry.start).toLocaleString('en-En', dateOptions);
+  startLabel += isCurrent || isRange ? '–' : '';
+  endLabel = isCurrent
+    ? 'Present'
+    : isRange
+    ? new Date(entry.end).toLocaleString('en-En', dateOptions)
+    : null;
+
   return (
     <CvRow key={entry.filePath}>
       <CvYear>
-        {entry.start}
-        {endYear}
+        <span>{startLabel}</span>
+        <span>{endLabel}</span>
       </CvYear>
       <CvContent content={entry.content} />
     </CvRow>
@@ -113,7 +127,7 @@ function simpleEntryRenderer(entry) {
 }
 
 const Section = ({ section, entries, entryRenderer }) => {
-  const rows = [...entries].sort(compareDates).map(entry => {
+  const rows = [...entries].sort(compareDates).map((entry) => {
     return entryRenderer(entry);
   });
 
@@ -125,18 +139,18 @@ const Section = ({ section, entries, entryRenderer }) => {
   );
 };
 
-const SectionWithoutYear = props => {
+const SectionWithoutYear = (props) => {
   return <Section {...props} entryRenderer={simpleEntryRenderer} />;
 };
 
-const SectionWithYear = props => {
+const SectionWithYear = (props) => {
   return <Section {...props} entryRenderer={entryRenderer} />;
 };
 
 const entryPropTypes = {
   filePath: PropTypes.string,
-  start: PropTypes.number,
-  end: PropTypes.number,
+  start: PropTypes.string,
+  end: PropTypes.string,
   content: PropTypes.string,
 };
 

@@ -4,7 +4,7 @@ title: "Freakolution"
 tags: ["university", "c#", "game design"]
 subtitle: "Award winning game"
 thumbnail: "../images/freakolution-thumbnail.png"
-start: 2016
+start: "2016"
 ---
 Freakolution is a 2D/3D hybrid multiplayer game made by me and three team members in Unity3D for a Game Design course at Nanyang Technological University (NTU) in singapore
 <!-- end -->

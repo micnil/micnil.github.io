@@ -4,7 +4,7 @@ title: "diffuse"
 subtitle: "Diff and review tool"
 tags: ["leisure", "typescript","electron"]
 thumbnail: "../images/diffuse-files.png"
-start: 2018
+start: "2018"
 ---
 I attempted to create a modern diff and code review tool. The goal was to facilitate code review in trunk based development.
 <!-- end -->

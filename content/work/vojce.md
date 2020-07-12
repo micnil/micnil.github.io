@@ -2,7 +2,7 @@
 key: "work"
 title: "vojce"
 tags: ["leisure", "javascript", "react-native", "nodejs"]
-start: 2015
+start: "2015"
 ---
 A social web application for creating and answering micro-polls. This is a pet side-project that I keep coming back to but never finished. Through the years i've attempted to rewrite the front-end 3 (and a half) times, which has allowed me to indulge in many new frameworks and technologies.
 <!-- end -->

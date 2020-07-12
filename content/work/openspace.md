@@ -2,7 +2,7 @@
 key: "work"
 title: "OpenSpace"
 tags: ["Master's thesis", "NASA", "C++", "opengl", "nodejs"]
-start: 2016
+start: "2016"
 subtitle: "Master's Thesis - NASA's Goddard Space Flight Center"
 thumbnail: "../images/openspace-thumbnail.png"
 ---

@@ -2,7 +2,7 @@
 key: "work"
 title: "B-spline Editor"
 tags: ["university", "javascript"]
-start: 2014
+start: "2014"
 ---
 A simple B-spline editor made by me for a 3D Modelling course at Nanyang Technological University (NTU) in singapore
 <!-- end -->

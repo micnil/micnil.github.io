@@ -2,7 +2,8 @@
 key: "cv"
 title: "Karma - Stockholm"
 section: "experience"
-start: 2020
+start: "2020-01-07"
+end: "2020-06-11"
 ---
 **Software Developer - Karma, Stockholm**
 

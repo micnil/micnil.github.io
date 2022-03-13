@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import SEO from '../components/Seo';
+import Seo from '../components/Seo';
 import { SectionWithoutYear, SectionWithYear } from '../components/cv/Section';
 
 const CvPage = ({ data }) => {
@@ -29,7 +29,7 @@ const CvPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="CV" keywords={['portfolio', 'cv']} />
+      <Seo title="CV" keywords={['portfolio', 'cv']} />
       {sections}
       {lists}
     </Layout>

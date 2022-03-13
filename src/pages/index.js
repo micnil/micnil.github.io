@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
-import SEO from '../components/Seo';
+import Seo from '../components/Seo';
 import Contact from '../components/home/Contact';
 import GitMessage from '../components/home/GitMessage';
 import { graphql } from 'gatsby';
@@ -20,7 +20,7 @@ const MobileOnlyGreeting = styled.div`
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Home" keywords={['software', 'developer', 'portfolio']} />
+      <Seo title="Home" keywords={['software', 'developer', 'portfolio']} />
       <MobileOnlyGreeting>
         <h1>Hello, I'm Michael</h1>
       </MobileOnlyGreeting>

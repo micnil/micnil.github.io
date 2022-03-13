@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
-import SEO from '../components/Seo';
+import Seo from '../components/Seo';
 import Post from '../components/work/Post';
 
 const PageHeader = styled.div`
@@ -28,7 +28,7 @@ const WorkPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Work" keywords={['portfolio', 'work', 'projects']} />
+      <Seo title="Work" keywords={['portfolio', 'work', 'projects']} />
       <PageHeader>
         <h4>
           {' '}

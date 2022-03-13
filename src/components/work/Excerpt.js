@@ -18,7 +18,7 @@ const Row = styled.div`
 
 const ColumnWithSpaceBetween = styled(Column)`
   justify-content: space-between;
-  flex: 2;
+  flex: 3;
 `;
 
 function Excerpt({

@@ -83,13 +83,7 @@ const CvContent = styled(HTMLContent).attrs(() => ({
 `;
 
 function compareDates(a, b) {
-  if (!a.end) {
-    return -1;
-  }
-  if (!b.end) {
-    return 1;
-  }
-  return a.end !== b.end ? b.end - a.end : b.start - a.start;
+  return new Date(b.start) - new Date(a.start);
 }
 
 function entryRenderer(entry) {

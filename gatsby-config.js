@@ -3,7 +3,7 @@ module.exports = {
     title: `Michael Nilsson`,
     description: `Portfolio for software developer Michael Nilsson.`,
     author: `Michael Nilsson`,
-    address: `Heleneborgsgatan 11A, 117 31 Stockholm`,
+    address: `Eklandagatan 45B, 412 61 Göteborg`,
     phone: `+46 704 25 3993`,
     url: `https://nilsson.dev`
   },

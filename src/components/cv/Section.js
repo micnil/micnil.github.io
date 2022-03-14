@@ -40,7 +40,6 @@ const CvYear = styled.div.attrs(() => ({
   display: flex;
   flex-direction: column;
   flex: 1;
-  border-right: 1px solid ${({ theme }) => theme.borderSecondary};
   color: ${({ theme }) => theme.textSecondary};
 
   @media print {
@@ -54,11 +53,16 @@ CvYear.defaultProps = {
   },
 };
 
+const BorderBox = styled.div`
+  flex: 6;
+  padding-left: 0.5em;
+  border-left: 1px solid ${({ theme }) => theme.borderSecondary};
+`;
+
 const CvContent = styled(HTMLContent).attrs(() => ({
   'data-testid': 'content',
 }))`
-  flex: 5;
-  padding-left: 0.5em;
+  margin-bottom: 10px;
   & p {
     margin-bottom: 0px;
   }
@@ -111,7 +115,9 @@ function entryRenderer(entry) {
         <span>{startLabel}</span>
         <span>{endLabel}</span>
       </CvYear>
-      <CvContent content={entry.content} />
+      <BorderBox>
+        <CvContent content={entry.content} />
+      </BorderBox>
     </CvRow>
   );
 }

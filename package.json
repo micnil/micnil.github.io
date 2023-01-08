@@ -6,9 +6,9 @@
   "author": "Michael Nilsson <michael@nilsson.dev>",
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.6",
-    "gatsby": "^4.9.3",
+    "gatsby": "^4.25.2",
     "gatsby-image": "^3.11.0",
-    "gatsby-plugin-google-analytics": "^4.9.0",
+    "gatsby-plugin-google-analytics": "^5.3.0",
     "gatsby-plugin-manifest": "^4.9.1",
     "gatsby-plugin-offline": "^5.9.1",
     "gatsby-plugin-react-helmet": "^5.9.0",
